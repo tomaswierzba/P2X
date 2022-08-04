@@ -13,7 +13,7 @@ import numpy as np
 #import numpy_financial as npf
 import math
 import altair as alt
-
+include("config.toml")
 
 
 #OUTPUTS VANILLA VERSION
