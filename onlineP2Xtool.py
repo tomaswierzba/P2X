@@ -4,7 +4,7 @@ Created on Mon Jul 11 14:34:45 2022
 
 @author: Tomás Wierzba
 """
-pip install numpy_financial as npf
+
 import streamlit as st
 import requests
 import json
