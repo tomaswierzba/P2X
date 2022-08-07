@@ -9,8 +9,8 @@ import streamlit as st
 import requests
 import json
 import pandas as pd
+import numpy_financial as npf
 import numpy as np
-#import numpy_financial as npf
 import math
 import altair as alt
 
