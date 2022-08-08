@@ -38,6 +38,10 @@ Electricity_spot = Electricity_spot_MWh/1000
 #Decide Specific capex
 electrolyser_specific_invest= st.sidebar.slider('What is the electrolyzer capital investment in €/kW? ', 0, 5000, 3050,50)
 
+#Decide discount rate
+discountRate_100 = st.sidebar.slider('What is the desired discount rate?', 0, 50, 5,1)
+discountRate = discountRate_100/100
+
 #Decide OPEX % of CAPEX
 electrolyser_OPEX_percentage2= st.sidebar.slider('What is the % CAPEX spent in OPEX yearly? ', 0, 20, 5)
 electrolyser_OPEX_percentage = electrolyser_OPEX_percentage2/100
@@ -100,7 +104,6 @@ d = alt.Chart(chart_data2).mark_bar().encode(
      x='Year:O',y='Cash Flow in Million €',color=alt.value('#ffe300')).configure(background='#193047')
 st.altair_chart(d, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
-discountRate    = 0.05; # Five percent per annum
 discountRate2 = round(discountRate*100,1)
 npv             = npf.npv(discountRate, cf)
 npv2 = round(npv,2)
