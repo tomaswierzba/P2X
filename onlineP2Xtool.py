@@ -22,8 +22,8 @@ import altair as alt
 #LCoH
 #IRR
 
-st.write(""" # Welcome to Hybrid Greentech's Power-to-X Sizing Platform""")
-st.write("This simple model provides valuable information for investors assesing to participate in the P2X sector. In order to give a general understanding, this model assumes a 1 MW electrolyzer, i.e. CAPEX reduction due to economics of scale are not considered. Other assumptions are that the SOEC produces 23.3 kg of Hydrogen per MWh of electricity and that the stacks replacement capital cost is 20% of the CAPEX. The main variables for this business case-study can be changed in the left pane.")
+st.write(""" # Welcome to Hybrid Greentech's user-friendly SOEC Business-case evaluation tool""")
+st.write("This simple model employed in this platform provides valuable information for investors assesing to participate in the P2X sector. In order to give a general understanding, this model assumes a 1 MW SOEC electrolyzer, i.e. CAPEX reduction due to economics of scale are not considered. Other assumptions are that the SOEC produces 23.3 kg of Hydrogen per MWh of electricity and that the stacks replacement capital cost is 20% of the CAPEX. The main variables for this business case-study can be changed in the left pane.")
 
 #Explain assumptions here
 
@@ -184,3 +184,9 @@ c2 = base.mark_text(radiusOffset=20).encode(text="labels:N")
 
 c1 + c2
 
+data = {
+'Electricity':LCoH_electricity_cost2,'CAPEX':LCoH_capex2,'Stack Replacement':LCoH_stack_rep_cost2, 'OPEX':LCoH_opex_electrolyser2
+}
+a20 = max(data, key=data.get)
+percentage_main-costdriver = a20/LCOH
+st.write("Hydrogen main cost-driver is %s, accounting %s %% of the cost" % (a20, percentage_main-costdriver))
