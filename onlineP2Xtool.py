@@ -23,7 +23,7 @@ import altair as alt
 #IRR
 
 st.write(""" # Welcome to Hybrid Greentech's user-friendly SOEC Business-case evaluation tool""")
-st.write("This simple model employed in this platform provides valuable information for investors assesing to participate in the P2X sector. In order to give a general understanding, this model assumes a 1 MW SOEC electrolyzer, i.e. CAPEX reduction due to economics of scale are not considered. Other assumptions are that the SOEC produces 23.3 kg of Hydrogen per MWh of electricity and that the stacks replacement capital cost is 20% of the CAPEX. The main variables for this business case-study can be changed in the left pane.")
+st.write("The simple model employed in this platform provides valuable information for investors assesing to participate in the P2X sector. In order to give a general understanding, this model assumes a 1 MW SOEC electrolyzer, i.e. CAPEX reduction due to economics of scale are not considered. Other assumptions are that the SOEC produces 23.3 kg of Hydrogen per MWh of electricity and that the stacks replacement capital cost is 20% of the CAPEX. The main variables for this business case-study can be changed in the left pane.")
 
 #Explain assumptions here
 
