@@ -188,5 +188,5 @@ data = {
 'Electricity':LCoH_electricity_cost2,'CAPEX':LCoH_capex2,'Stack Replacement':LCoH_stack_rep_cost2, 'OPEX':LCoH_opex_electrolyser2
 }
 a20 = max(data, key=data.get)
-percentage_main-costdriver = a20/LCOH
+pere_main_costdriver = a20/LCOH
 st.write("Hydrogen main cost-driver is %s, accounting %s %% of the cost" % (a20, percentage_main-costdriver))
