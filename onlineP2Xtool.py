@@ -114,7 +114,6 @@ d.configure_title(
     font='Courier',
     anchor='start',
 )
-d.configure_axis(orient="top")
 st.altair_chart(d, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
 discountRate2 = round(discountRate*100,1)
