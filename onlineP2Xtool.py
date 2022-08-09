@@ -99,9 +99,9 @@ chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flow in Million €
 d = alt.Chart(chart_data2).mark_bar().encode(
      x='Year:O',y='Non-discounted Cash Flow in Million €',color=alt.value('#ffe300')).configure(background='#193047')
 d.configure_header(
-    titleColor='#f0f2f6',
+    titleColor='green',
     titleFontSize=14,
-    labelColor='#f0f2f6',
+    labelColor='red',
     labelFontSize=14
 )
 st.altair_chart(d, use_container_width=True)
