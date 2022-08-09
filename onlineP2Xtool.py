@@ -114,16 +114,16 @@ if all(e <= 0 for e in NPV):
     st.write('Project is not profitable in 27 years')
 else:
     st.write('Payback time is approximately %s years' % (a1010))
-chart_data3 = pd.DataFrame({'Year':year,'Net Present value in Million €':NPV})
+chart_data3 = pd.DataFrame({'Year':year,'Accumulated Discounted Cash Flows in Million €':NPV})
 c = alt.Chart(chart_data3).mark_bar().encode(
-     x='Year:O',y='Net Present value in Million €',color=alt.value('#ffe300')).configure(background='#193047')
+     x='Year:O',y='Accumulated Discounted Cash Flows in Million €',color=alt.value('#ffe300')).configure(background='#193047')
 st.altair_chart(c, use_container_width=True)
 
-st.write('Net present value of the investment, considering a %s %% discount rate, is: %s M€' % (discountRate2,npv2))
+st.write('Net present value: %s M€ (%s %% discount rate)' % (npv2,discountRate2))
 #------------------------------------IRR---------------------------------------------------------------------------------------------
 IRR = npf.irr(cf)
 IRR2 = round(IRR*100,1)
-st.write('The IRR is %s %%' % (IRR2))
+st.write('IRR: %s %%' % (IRR2))
 #Hydrogen Price independent
 #------------------------------------LCoH-----------------------------------------------------------------------------------
 Expenses = np.zeros(lifetime +1) #expenses plus electricity income in €/year
@@ -132,7 +132,7 @@ for t in range(1,len(cf)):
 Expenses[0] = -cf[0]*1e+6
 LCoH = npf.npv(discountRate,Expenses)/npf.npv(discountRate, Hydrogen_production_yearly)
 LCoH2 = round(LCoH,1)
-st.write('The levelized cost of Hydrogen, considering a %s %% discount rate, is: %s €/kg' % (discountRate2,LCoH2))
+st.write('Levelized cost of Hydrogen: %s €/kg (%s %% discount rate)' % (LCoH2,discountRate2))
 
 #------------------------------------LCoH per expense-----------------------------------------------------------------
 OPEX_electrolyser_yearly_v = np.zeros(lifetime+1)
