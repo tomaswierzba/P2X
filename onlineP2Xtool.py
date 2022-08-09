@@ -98,13 +98,12 @@ year=np.linspace(0, lifetime,lifetime+1)
 chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flow in Million €':cf})
 d = alt.Chart(chart_data2).mark_bar().encode(
      x='Year:O',y='Non-discounted Cash Flow in Million €:Q',color=alt.value('#ffe300')).configure(background='#193047').properties(
-    title='Cars Data'
+    title='Non-discounted Cash Flows'
 )
-d.configure_header(
-    titleColor='green',
-    titleFontSize=14,
-    labelColor='red',
-    labelFontSize=14
+d.configure_title(
+    fontSize=20,
+    font='Courier',
+    anchor='start',
 )
 st.altair_chart(d, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
@@ -124,7 +123,14 @@ else:
     st.write('Payback time is approximately %s years' % (a1010))
 chart_data3 = pd.DataFrame({'Year':year,'Accumulated Discounted Cash Flows in Million €':NPV})
 c = alt.Chart(chart_data3).mark_bar().encode(
-     x='Year:O',y='Accumulated Discounted Cash Flows in Million €',color=alt.value('#ffe300')).configure(background='#193047')
+     x='Year:O',y='Accumulated Discounted Cash Flows in Million €',color=alt.value('#ffe300')).configure(background='#193047').properties(
+    title='Accumulated Discounted Cash Flows'
+)
+d.configure_title(
+    fontSize=20,
+    font='Courier',
+    anchor='start',
+)
 st.altair_chart(c, use_container_width=True)
 
 st.write('Net present value: %s M€ (%s %% discount rate)' % (npv2,discountRate2))
