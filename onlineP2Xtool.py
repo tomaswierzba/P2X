@@ -31,9 +31,13 @@ electrolyser_nom_cap = 1000 #kW
 
 st.sidebar.write(""" # Key variables""")
 
-#Decide averageelectricity spot price
+#Decide average electricity spot price
 Electricity_spot_MWh = st.sidebar.slider('What is the average electricity spot price in €/MWh? ', 0, 200, 60)
 Electricity_spot = Electricity_spot_MWh/1000
+
+#Decide power-to-hydrogen production ratio
+H2_electrolyser_input_1000 = st.sidebar.slider('What is the power-to-Hydrogen production ratio kg/MWh? ', 0, 50, 23.3,0.1)
+H2_electrolyser_input = H2_electrolyser_input_1000/1000
 
 #Decide Specific capex
 electrolyser_specific_invest= st.sidebar.slider('What is the electrolyzer capital investment in €/kW? ', 0, 5000, 3050,50)
@@ -52,23 +56,15 @@ full_load_hours= st.sidebar.slider('Full-load hours of operation in a year: ', 0
 #Decide technical lifetime of stack
 technical_lifetime_stacks= st.sidebar.slider('Technical lifetime of stacks in full-load hours of operation: ', 0, 150000,20000 ,1000)
 
+#Decide stack replacement cost
+electrolyser_STACK_replacement_100 = st.sidebar.slider('Stack replacement cost as % of CAPEX: ', 0, 100,20 ,1)
+electrolyser_STACK_replacement = electrolyser_STACK_replacement_100/100
+
 #Decide future Hydrogen price
 Hydrogen_price = st.sidebar.slider('What is the future average Hydrogen sale price in €/kg?', 0, 15,6)
 
 #Decide future Hydrogen price
 lifetime = st.sidebar.slider('What is the project lifetime in years?', 0, 30,25)
-
-
-
-# Recommended values from https://ens.dk/sites/ens.dk/files/Analyser/technology_data_for_renewable_fuels.pdf pg. 107 & 115
-
-H2_SOEC_input = 0.0233     # Kg / kWh input
-SOEC_STACK_replacement   = 0.2       # 20% of SOEC CAPEX according to Ceres Power
-
-
-H2_electrolyser_input = H2_SOEC_input
-electrolyser_STACK_replacement = SOEC_STACK_replacement
-  
 
 #-----------------------------------OPEX---------------------------------------------------------------------------------------
 OPEX_electrolyser_yearly = electrolyser_OPEX_percentage * electrolyser_specific_invest * electrolyser_nom_cap #€/year this value must be changed when changing electrolyser specific investment
