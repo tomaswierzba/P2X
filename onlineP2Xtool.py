@@ -47,7 +47,7 @@ discountRate_100 = st.sidebar.slider('What is the desired discount rate?', 0, 50
 discountRate = discountRate_100/100
 
 #Decide OPEX % of CAPEX
-electrolyser_OPEX_percentage2= st.sidebar.slider('What is the % CAPEX spent in OPEX yearly? ', 0, 20, 5)
+electrolyser_OPEX_percentage2= st.sidebar.slider('What is the % CAPEX spent in O&M yearly? ', 0, 20, 5)
 electrolyser_OPEX_percentage = electrolyser_OPEX_percentage2/100
 
 #Decide how many full-load hours of operation will the electrolyzer run in a year
@@ -61,7 +61,7 @@ electrolyser_STACK_replacement_100 = st.sidebar.slider('Stack replacement cost a
 electrolyser_STACK_replacement = electrolyser_STACK_replacement_100/100
 
 #Decide future Hydrogen price
-Hydrogen_price = st.sidebar.slider('What is the future average Hydrogen sale price in €/kg?', 0, 15,6)
+Hydrogen_price = st.sidebar.slider('What is the future average Hydrogen sales price in €/kg?', 0, 15,6)
 
 #Decide future Hydrogen price
 lifetime = st.sidebar.slider('What is the project lifetime in years?', 0, 30,25)
