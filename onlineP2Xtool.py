@@ -24,6 +24,8 @@ import altair as alt
 
 from PIL import Image
 image = Image.open('HG_Color_hori_back.png')
+image2 = Image.open('HG_Yellow_hori.png')
+
 
 st.image(image, caption=None)
 
@@ -34,7 +36,7 @@ st.write("This tool assumes a 1 MW electrolyzer. Main variables for this busines
 
 electrolyser_nom_cap = 1000 #kW
 
-st.sidebar.image(image)
+st.sidebar.image(image2)
 
 st.sidebar.write(""" # Key variables""")
 
