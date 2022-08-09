@@ -126,10 +126,7 @@ for i in range(1,len(cf)):
     if NPV[i]>=0:
         if NPV[i-1]<=0:
             a1010=i
-if all(e <= 0 for e in NPV):
-    st.write('Project is not profitable in 27 years')
-else:
-    st.write('Payback time is approximately %s years' % (a1010))
+
 chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV})
 c = alt.Chart(chart_data3).mark_bar().encode(
      x='Year:O',y="Acc Disc Cash Flows in Million €",color=alt.value('#ffe300')).configure(background='#193047').properties(
@@ -141,6 +138,11 @@ d.configure_title(
     anchor='start',
 )
 st.altair_chart(c, use_container_width=True)
+
+if all(e <= 0 for e in NPV):
+    st.write('Project is not profitable in 27 years')
+else:
+    st.write('Payback time: %s years' % (a1010))
 
 st.write('Net present value: %s M€ (%s %% discount rate)' % (npv2,discountRate2))
 #------------------------------------IRR---------------------------------------------------------------------------------------------
