@@ -23,7 +23,7 @@ import altair as alt
 #IRR
 
 st.write(""" # NEXP2X Business-Case Tool""")
-st.write("This simple model assumes a 1 MW electrolyzer. The main variables for this business case-study can be changed in the left pane and their initial values repesent SOEC technology.")
+st.write("This tool assumes a 1 MW electrolyzer. Main variables for this business case-study can be changed in the left pane and their initial values repesent SOEC technology.")
 
 #Explain assumptions here
 
