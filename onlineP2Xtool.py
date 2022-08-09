@@ -97,7 +97,7 @@ for t in range (1,len(cf)):
 year=np.linspace(0, lifetime,lifetime+1)
 chart_data2 = pd.DataFrame({'Year':year,'Non-disc Cash Flow in Million €':cf})
 d = alt.Chart(chart_data2).mark_bar().encode(
-     x='Year:O',y='Non-discounted Cash Flow in Million €:Q',color=alt.value('#ffe300')).configure(background='#193047').properties(
+     x='Year:O',y='Non-disc Cash Flow in Million €:Q',color=alt.value('#ffe300')).configure(background='#193047').properties(
     title='Non-discounted Cash Flows'
 )
 d.configure_title(
