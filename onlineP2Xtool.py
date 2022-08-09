@@ -185,5 +185,6 @@ data = {
 }
 a20 = max(data, key=data.get)
 per_main_costdriver = round(data[a20] / LCoH * 100 , 1)
-st.write("Hydrogen main cost-driver is %s, accounting to %s %% of the cost" % (a20, per_main_costdriver))
-st.write("If you want to learn more about Power-to-X business cases you are welcome to reach out to us. Let's create more value together.")
+st.write("The main cost-driver for the Levelized Cost of Hydrogen is found to be %s, accounting for %s %% of the cost" % (a20, per_main_costdriver))
+st.write("What's your next action towards 100% renewables?")
+st.write("Let's create more value together, send us an e-mail to info@hybridgreentech.com")
