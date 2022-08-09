@@ -97,7 +97,7 @@ for t in range (1,len(cf)):
 year=np.linspace(0, lifetime,lifetime+1)
 chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flow in Million €':cf})
 d = alt.Chart(chart_data2).mark_bar().encode(
-     x='Year:O',y='Non-discounted Cash Flow in Million €',color=alt.value('#ffe300')).configure(background='#193047').properties(width=1600)
+     x='Year:O',y='Non-discounted Cash Flow in Million €',color=alt.value('#ffe300')).configure(background='#193047')
 st.altair_chart(d, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
 discountRate2 = round(discountRate*100,1)
@@ -165,7 +165,7 @@ LCoH_stack_rep_cost = npf.npv(discountRate,stack_replacement_cost_v)/npf.npv(dis
 LCoH_stack_rep_cost2 = round(LCoH_stack_rep_cost,1)
 
 st.write("The radial plot below shows the levelised cost contributions of the main cost-drivers for Hydrogen:")
-source = pd.DataFrame({"Values": [LCoH_electricity_cost2,LCoH_capex2,LCoH_stack_rep_cost2, LCoH_opex_electrolyser2],"Cost contribution": ['Electricity','CAPEX','Stack Replacement','OPEX Electrolyzer'],"labels":["%s €/kg" % (LCoH_electricity_cost2),"%s €/kg" % (LCoH_capex2),"%s €/kg" % (LCoH_stack_rep_cost2),"%s €/kg" % (LCoH_opex_electrolyser2)]})
+source = pd.DataFrame({"Values": [LCoH_electricity_cost2,LCoH_capex2,LCoH_stack_rep_cost2, LCoH_opex_electrolyser2],"Cost contribution": ['Electricity','CAPEX','Stack Replacement','O&M Electrolyzer'],"labels":["%s €/kg" % (LCoH_electricity_cost2),"%s €/kg" % (LCoH_capex2),"%s €/kg" % (LCoH_stack_rep_cost2),"%s €/kg" % (LCoH_opex_electrolyser2)]})
 
 base = alt.Chart(source).encode(
     theta=alt.Theta("Values:Q", stack=True), color=alt.Color('Cost contribution:N'),
