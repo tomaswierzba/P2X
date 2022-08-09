@@ -98,7 +98,7 @@ year=np.linspace(0, lifetime,lifetime+1)
 chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flow in Million €':cf})
 d = alt.Chart(chart_data2).mark_bar().encode(
      x='Year:O',y='Non-discounted Cash Flow in Million €',color=alt.value('#ffe300')).configure(background='#193047')
-chart.configure_header(
+d.configure_header(
     titleColor='#f0f2f6',
     titleFontSize=14,
     labelColor='#f0f2f6',
