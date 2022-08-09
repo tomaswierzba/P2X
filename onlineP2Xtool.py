@@ -22,8 +22,8 @@ import altair as alt
 #LCoH
 #IRR
 
-st.write(""" # Welcome to Hybrid Greentech's user-friendly SOEC Business-case evaluation tool""")
-st.write("The simple model employed in this platform provides valuable information for investors assesing to participate in the P2X sector. In order to give a general understanding, this model assumes initially a 1 MW electrolyzer. The main variables for this business case-study can be changed in the left pane and their initial values repesent SOEC technology.")
+st.write(""" # Electrolyzer business-case evaluation tool""")
+st.write("This simple model assumes a 1 MW electrolyzer. The main variables for this business case-study can be changed in the left pane and their initial values repesent SOEC technology.")
 
 #Explain assumptions here
 
