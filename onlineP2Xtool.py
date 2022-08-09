@@ -169,7 +169,7 @@ source = pd.DataFrame({"Values": [LCoH_electricity_cost2,LCoH_capex2,LCoH_stack_
 domain = ['Electricity','CAPEX','Stack Replacement','O&M Electrolyzer']
 range_ = ['red', 'green', 'blue','white']
 base = alt.Chart(source).encode(
-    theta=alt.Theta("Values:Q", stack=True), color=alt.Color('Cost contribution:N'),
+    theta=alt.Theta("Values:Q", stack=True), color=alt.Color('Cost contribution:N', scale=alt.Scale(domain=domain, range=range_)),
     radius=alt.Radius("Values:Q", scale=alt.Scale(type="sqrt", zero=True, rangeMin=20)),
 )
 
