@@ -77,7 +77,7 @@ CAPEX                   = CAPEX_electrolyser
 #------------------------------------Income-----------------------------------------------------------------------------------------
 Hydrogen_production_yearly = np.zeros(lifetime +1)
 for t in range(1,lifetime+1):
-    Hydrogen_production_yearly[t] = H2_SOEC_input * full_load_hours * electrolyser_nom_cap
+    Hydrogen_production_yearly[t] = H2_electrolyser_input * full_load_hours * electrolyser_nom_cap
 Hydrogen_income_yearly = np.zeros(lifetime +1)
 for t in range(1,lifetime+1):
     Hydrogen_income_yearly[t] = Hydrogen_price * Hydrogen_production_yearly[t] #€/year
