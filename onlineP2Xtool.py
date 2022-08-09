@@ -42,10 +42,6 @@ H2_electrolyser_input = H2_electrolyser_input_1000/1000
 #Decide Specific capex
 electrolyser_specific_invest= st.sidebar.slider('What is the electrolyzer capital investment in €/kW? ', 0, 5000, 3050,50)
 
-#Decide discount rate
-discountRate_100 = st.sidebar.slider('What is the desired discount rate?', 0, 50, 5,1)
-discountRate = discountRate_100/100
-
 #Decide OPEX % of CAPEX
 electrolyser_OPEX_percentage2= st.sidebar.slider('What is the % CAPEX spent in O&M yearly? ', 0, 20, 5)
 electrolyser_OPEX_percentage = electrolyser_OPEX_percentage2/100
@@ -65,6 +61,10 @@ Hydrogen_price = st.sidebar.slider('What is the future average Hydrogen sales pr
 
 #Decide future Hydrogen price
 lifetime = st.sidebar.slider('What is the project lifetime in years?', 0, 30,25)
+
+#Decide discount rate
+discountRate_100 = st.sidebar.slider('What is the desired discount rate?', 0, 50, 5,1)
+discountRate = discountRate_100/100
 
 #-----------------------------------OPEX---------------------------------------------------------------------------------------
 OPEX_electrolyser_yearly = electrolyser_OPEX_percentage * electrolyser_specific_invest * electrolyser_nom_cap #€/year this value must be changed when changing electrolyser specific investment
