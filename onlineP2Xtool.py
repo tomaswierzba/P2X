@@ -36,7 +36,7 @@ Electricity_spot_MWh = st.sidebar.slider('What is the average electricity spot p
 Electricity_spot = Electricity_spot_MWh/1000
 
 #Decide power-to-hydrogen production ratio
-H2_electrolyser_input_1000 = st.sidebar.slider('What is the power-to-Hydrogen production ratio kg/MWh? ', 0, 50, 23.3,0.1)
+H2_electrolyser_input_1000 = st.sidebar.slider('What is the power-to-Hydrogen production ratio kg/MWh? ', 0.0, 50.0, 23.3,0.1)
 H2_electrolyser_input = H2_electrolyser_input_1000/1000
 
 #Decide Specific capex
