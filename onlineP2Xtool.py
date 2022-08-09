@@ -23,7 +23,7 @@ import altair as alt
 #IRR
 
 st.write(""" # Welcome to Hybrid Greentech's user-friendly SOEC Business-case evaluation tool""")
-st.write("The simple model employed in this platform provides valuable information for investors assesing to participate in the P2X sector. In order to give a general understanding, this model assumes a 1 MW SOEC electrolyzer, i.e. CAPEX reduction due to economics of scale are not considered. Other assumptions are that the SOEC produces 23.3 kg of Hydrogen per MWh of electricity and that the stacks replacement capital cost is 20% of the CAPEX. The main variables for this business case-study can be changed in the left pane.")
+st.write("The simple model employed in this platform provides valuable information for investors assesing to participate in the P2X sector. In order to give a general understanding, this model assumes initially a 1 MW electrolyzer. The main variables for this business case-study can be changed in the left pane and their initial values repesent SOEC technology.")
 
 #Explain assumptions here
 
@@ -95,9 +95,9 @@ for i in range(1, lifetime+1):
 for t in range (1,len(cf)):
     cf[t] = -CAPEX_electrolyser * electrolyser_STACK_replacement * years_of_stack_replacement[t] /1e+6 + (- OPEX_yearly + Hydrogen_income_yearly[t])/1e+6
 year=np.linspace(0, lifetime,lifetime+1)
-chart_data2 = pd.DataFrame({'Year':year,'Cash Flow in Million €':cf})
+chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flow in Million €':cf})
 d = alt.Chart(chart_data2).mark_bar().encode(
-     x='Year:O',y='Cash Flow in Million €',color=alt.value('#ffe300')).configure(background='#193047')
+     x='Year:O',y='Non-discounted Cash Flow in Million €',color=alt.value('#ffe300')).configure(background='#193047')
 st.altair_chart(d, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
 discountRate2 = round(discountRate*100,1)
