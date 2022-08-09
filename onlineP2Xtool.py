@@ -132,7 +132,7 @@ for t in range(1,len(cf)):
 Expenses[0] = -cf[0]*1e+6
 LCoH = npf.npv(discountRate,Expenses)/npf.npv(discountRate, Hydrogen_production_yearly)
 LCoH2 = round(LCoH,1)
-st.write('Levelized cost of Hydrogen: %s €/kg (%s %% discount rate)' % (LCoH2,discountRate2))
+st.write('Levelized Cost of Hydrogen: %s €/kg (%s %% discount rate)' % (LCoH2,discountRate2))
 
 #------------------------------------LCoH per expense-----------------------------------------------------------------
 OPEX_electrolyser_yearly_v = np.zeros(lifetime+1)
