@@ -22,6 +22,11 @@ import altair as alt
 #LCoH
 #IRR
 
+from PIL import Image
+image = Image.open('HG_Color_hori_back.PNG')
+
+st.image(image, caption=None)
+
 st.write(""" # NEXP2X Business-Case Tool""")
 st.write("This tool assumes a 1 MW electrolyzer. Main variables for this business case-study can be changed in the left pane and their initial values repesent SOEC technology.")
 
