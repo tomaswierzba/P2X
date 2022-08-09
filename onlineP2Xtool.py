@@ -121,9 +121,9 @@ if all(e <= 0 for e in NPV):
     st.write('Project is not profitable in 27 years')
 else:
     st.write('Payback time is approximately %s years' % (a1010))
-chart_data3 = pd.DataFrame({'Year':year,'Acc Disc Cash Flows in Million €':NPV})
+chart_data3 = pd.DataFrame({'Year':year,"Acc. Disc. Cash Flows in Million €":NPV})
 c = alt.Chart(chart_data3).mark_bar().encode(
-     x='Year:O',y='Acc Disc Cash Flows in Million €',color=alt.value('#ffe300')).configure(background='#193047').properties(
+     x='Year:O',y=".Acc Disc. Cash Flows in Million €",color=alt.value('#ffe300')).configure(background='#193047').properties(
     title='Accumulated Discounted Cash Flows'
 )
 d.configure_title(
