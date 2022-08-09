@@ -95,7 +95,7 @@ for i in range(1, lifetime+1):
 for t in range (1,len(cf)):
     cf[t] = -CAPEX_electrolyser * electrolyser_STACK_replacement * years_of_stack_replacement[t] /1e+6 + (- OPEX_yearly + Hydrogen_income_yearly[t])/1e+6
 year=np.linspace(0, lifetime,lifetime+1)
-chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flow in Million €':cf})
+chart_data2 = pd.DataFrame({'Year':year,'Non-disc Cash Flow in Million €':cf})
 d = alt.Chart(chart_data2).mark_bar().encode(
      x='Year:O',y='Non-discounted Cash Flow in Million €:Q',color=alt.value('#ffe300')).configure(background='#193047').properties(
     title='Non-discounted Cash Flows'
@@ -121,9 +121,9 @@ if all(e <= 0 for e in NPV):
     st.write('Project is not profitable in 27 years')
 else:
     st.write('Payback time is approximately %s years' % (a1010))
-chart_data3 = pd.DataFrame({'Year':year,"Acc. Disc. Cash Flows in Million €":NPV})
+chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV})
 c = alt.Chart(chart_data3).mark_bar().encode(
-     x='Year:O',y="Acc. Disc. Cash Flows in Million €",color=alt.value('#ffe300')).configure(background='#193047').properties(
+     x='Year:O',y="Acc Disc Cash Flows in Million €",color=alt.value('#ffe300')).configure(background='#193047').properties(
     title='Accumulated Discounted Cash Flows'
 )
 d.configure_title(
