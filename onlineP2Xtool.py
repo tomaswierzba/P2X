@@ -101,7 +101,7 @@ d = alt.Chart(chart_data2).mark_bar().encode(
     title='Non-discounted Cash Flows'
 )
 d.configure_title(
-    fontSize=20,
+    fontSize=40,
     font='Courier',
     anchor='start',
 )
