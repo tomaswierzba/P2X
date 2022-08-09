@@ -34,6 +34,8 @@ st.write("This tool assumes a 1 MW electrolyzer. Main variables for this busines
 
 electrolyser_nom_cap = 1000 #kW
 
+st.sidebar.image(image)
+
 st.sidebar.write(""" # Key variables""")
 
 #Decide average electricity spot price
