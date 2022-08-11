@@ -112,7 +112,8 @@ d = alt.Chart(chart_data2).mark_bar().encode(
     fontSize=30,
     font='Courier',
     anchor='middle',
-    color='#f0f2f6'
+    color='#f0f2f6',
+    titleFont='sans serif'
 ).configure_axis(titleColor='black')
 
 st.altair_chart(d, use_container_width=True)
