@@ -111,7 +111,7 @@ d = alt.Chart(chart_data2).mark_bar().encode(
 ).configure_title(lineHeight=10,
     fontSize=30,
     font='Courier',
-    anchor='center',
+    anchor='middle',
     color='"#f0f2f6"'
 )
 
