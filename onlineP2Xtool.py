@@ -108,7 +108,7 @@ chart_data2 = pd.DataFrame({'Year':year,'Non-disc Cash Flows in Million €':cf}
 d = alt.Chart(chart_data2).mark_bar().encode(
      x='Year:O',y='Non-disc Cash Flows in Million €:Q',color=alt.value('#ffe300')).properties(
     title='NEXP2X Business-Case Tool',width= 600, height= 400
-).configure_title(offset=100,
+).configure_title(lineHeight=100,
     fontSize=30,
     fontWeight=900,
     font='monospace',
