@@ -210,7 +210,7 @@ data = {
 'Electricity':LCoH_electricity_cost2,'CAPEX':LCoH_capex2,'Stack Replacement':LCoH_stack_rep_cost2, 'OPEX':LCoH_opex_electrolyser2
 }
 a20 = max(data, key=data.get)
-per_main_costdriver = round(data[a20] / LCoH * 100 , 0)
+per_main_costdriver = round(data[a20] / LCoH * 100 )
 st.write("The main cost-driver for the Levelized Cost of Hydrogen is found to be %s, accounting for %s %% of the cost." % (a20, per_main_costdriver))
 st.write("What's your next action towards 100% renewables?")
 st.write("Let's create more value together, send us an e-mail to info@hybridgreentech.com")
