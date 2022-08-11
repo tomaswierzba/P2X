@@ -40,9 +40,15 @@ st.sidebar.image(image2)
 
 st.sidebar.write(""" # Key variables""")
 
+#Decide future Hydrogen price
+Hydrogen_price = st.sidebar.slider('What is the future average Hydrogen sales price in €/kg?', 0, 15,6,1)
+
 #Decide average electricity spot price
 Electricity_spot_MWh = st.sidebar.slider('What is the average electricity spot price in €/MWh? ', 0, 200, 60,10)
 Electricity_spot = Electricity_spot_MWh/1000
+
+#Decide how many full-load hours of operation will the electrolyzer run in a year
+full_load_hours= st.sidebar.slider('Full-load hours of operation in a year: ', 0, 8760, 7500,100)
 
 #Decide power-to-hydrogen production ratio
 H2_electrolyser_input_1000 = st.sidebar.slider('What is the power-to-Hydrogen production ratio kg/MWh? ', 10, 30, 23,1)
@@ -51,22 +57,16 @@ H2_electrolyser_input = H2_electrolyser_input_1000/1000
 #Decide Specific capex
 electrolyser_specific_invest= st.sidebar.slider('What is the electrolyzer capital investment in €/kW? ', 0, 5000, 3000,250)
 
-#Decide OPEX % of CAPEX
-electrolyser_OPEX_percentage2= st.sidebar.slider('What is the % CAPEX spent in O&M yearly? ', 0, 20, 5,1)
-electrolyser_OPEX_percentage = electrolyser_OPEX_percentage2/100
-
-#Decide how many full-load hours of operation will the electrolyzer run in a year
-full_load_hours= st.sidebar.slider('Full-load hours of operation in a year: ', 0, 8760, 7500,100)
-
 #Decide technical lifetime of stack
 technical_lifetime_stacks= st.sidebar.slider('Technical lifetime of stacks in full-load hours of operation: ', 0, 100000,20000 ,5000)
+
+#Decide OPEX % of CAPEX
+electrolyser_OPEX_percentage2= st.sidebar.slider('What is the % CAPEX spent in O&M yearly (not including stack replacement)? ', 0, 20, 5,1)
+electrolyser_OPEX_percentage = electrolyser_OPEX_percentage2/100
 
 #Decide stack replacement cost
 electrolyser_STACK_replacement_100 = st.sidebar.slider('Stack replacement cost as % of CAPEX: ', 0, 50,20 ,1)
 electrolyser_STACK_replacement = electrolyser_STACK_replacement_100/100
-
-#Decide future Hydrogen price
-Hydrogen_price = st.sidebar.slider('What is the future average Hydrogen sales price in €/kg?', 0, 15,6,1)
 
 #Decide project lifetime
 lifetime = st.sidebar.slider('What is the project lifetime in years?', 0, 30,25,1)
