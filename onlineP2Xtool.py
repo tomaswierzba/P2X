@@ -114,7 +114,7 @@ d.configure_title(
     font='Courier',
     anchor='start',
 )
-textd = alt.Chart(chart_data2).mark_text(color='black')
+textd = alt.Chart(chart_data2).mark_text(text='hi',color='black')
 d + textd
 #st.altair_chart(d, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
