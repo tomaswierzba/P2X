@@ -113,8 +113,8 @@ d = alt.Chart(chart_data2).mark_bar().encode(
     fontWeight=900,
     font='monospace',
     anchor='middle',
-    color='#142330'
-).configure_axis(titleColor='#142330',labelColor='#142330',labelAngle=0, labelFont='monospace',labelFontSize=15, titleFont='monospace',titleFontSize=15, gridColor='black')
+    color='#194366'
+).configure_axis(titleColor='#194366',labelColor='#194366',labelAngle=0, labelFont='monospace',labelFontSize=15, titleFont='monospace',titleFontSize=15, gridColor='black')
 st.altair_chart(d, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
 discountRate2 = round(discountRate*100,1)
