@@ -109,7 +109,7 @@ d = alt.Chart(chart_data2).mark_bar().encode(
      x='Year:O',y='Non-disc Cash Flows in Million €:Q',color=alt.value('#ffe300')).configure(background='white').properties(
     title='Non-discounted Cash Flows'
 )
-text = d.mark_text().encode(color='black')
+text = d.mark_text(text='hi')
 
 st.altair_chart(d + text, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
@@ -129,11 +129,7 @@ c = alt.Chart(chart_data3).mark_bar().encode(
      x='Year:O',y="Acc Disc Cash Flows in Million €",color=alt.value('#ffe300')).configure(background='white').properties(
     title='Accumulated Discounted Cash Flows'
 )
-c.configure_title(
-    fontSize=20,
-    font='Courier',
-    anchor='start',
-)
+
 st.altair_chart(c, use_container_width=True)
 
 if all(e <= 0 for e in NPV):
