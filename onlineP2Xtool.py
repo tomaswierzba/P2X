@@ -110,8 +110,8 @@ d = alt.Chart(chart_data2).mark_bar().encode(
     title='Non-discounted Cash Flows'
 )
 textd = d.mark_text().encode(color='black')
-d + textd
-#st.altair_chart(d, use_container_width=True)
+
+st.altair_chart(d, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
 discountRate2 = round(discountRate*100,1)
 npv             = npf.npv(discountRate, cf)
