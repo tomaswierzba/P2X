@@ -113,7 +113,7 @@ d = alt.Chart(chart_data2).mark_bar().encode(
     font='Courier',
     anchor='middle',
     color='#f0f2f6'
-)
+).configure_axis(titleColor='black')
 
 st.altair_chart(d, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
