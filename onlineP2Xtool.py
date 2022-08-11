@@ -61,7 +61,7 @@ electrolyser_specific_invest= st.sidebar.slider('What is the electrolyzer capita
 technical_lifetime_stacks= st.sidebar.slider('Technical lifetime of stacks in full-load hours of operation: ', 0, 100000,20000 ,5000)
 
 #Decide OPEX % of CAPEX
-electrolyser_OPEX_percentage2= st.sidebar.slider('What is the % CAPEX spent in O&M yearly (not including stack replacement)? ', 0, 20, 5,1)
+electrolyser_OPEX_percentage2= st.sidebar.slider('What is the % CAPEX spent in O&M yearly (stack replacement cost not included)? ', 0, 20, 5,1)
 electrolyser_OPEX_percentage = electrolyser_OPEX_percentage2/100
 
 #Decide stack replacement cost
