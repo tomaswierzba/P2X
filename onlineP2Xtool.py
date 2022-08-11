@@ -107,14 +107,14 @@ year=np.linspace(0, lifetime,lifetime+1)
 chart_data2 = pd.DataFrame({'Year':year,'Non-disc Cash Flows in Million €':cf})
 d = alt.Chart(chart_data2).mark_bar().encode(
      x='Year:O',y='Non-disc Cash Flows in Million €:Q',color=alt.value('#ffe300')).properties(
-    title='Non-discounted Cash Flows',width= 600, height= 400
+    title='NEXP2X Business-Case Tool',width= 600, height= 400
 ).configure_title(lineHeight=10,
     fontSize=30,
-    font='monospace',
+    font='sans serif',
     anchor='middle',
     color='#f0f2f6'
 ).configure_axis(titleColor='black')
-
+#Non-discounted Cash Flows
 st.altair_chart(d, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
 discountRate2 = round(discountRate*100,1)
