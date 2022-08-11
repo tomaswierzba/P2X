@@ -108,14 +108,13 @@ chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flows in Million â‚
 d = alt.Chart(chart_data2).mark_bar().encode(
      x='Year:O',y='Non-discounted Cash Flows in Million â‚¬:Q',color=alt.value('#ffe300')).properties(
     title='Non-discounted Cash Flows',width= 600, height= 400
-).configure_title(
+).configure(background='white').configure_title(
     fontSize=30,
     fontWeight=900,
     font='monospace',
     anchor='middle',
     color='#f0f2f6'
-).configure_axis(titleColor='#f0f2f6',labelAngle=0, labelFont='monospace',labelFontSize=15, titleFont='monospace',titleFontSize=15).configure(background='white')
-
+).configure_axis(titleColor='#f0f2f6',labelAngle=0, labelFont='monospace',labelFontSize=15, titleFont='monospace',titleFontSize=15)
 st.altair_chart(d, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
 discountRate2 = round(discountRate*100,1)
