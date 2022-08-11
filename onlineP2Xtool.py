@@ -110,10 +110,9 @@ d = alt.Chart(chart_data2).mark_bar().encode(
     title='Non-discounted Cash Flows',width= 600, height= 400
 ).configure_title(lineHeight=10,
     fontSize=30,
-    font='Courier',
+    font='sans serif',
     anchor='middle',
-    color='#f0f2f6',
-    titleFont='sans serif'
+    color='#f0f2f6'
 ).configure_axis(titleColor='black')
 
 st.altair_chart(d, use_container_width=True)
