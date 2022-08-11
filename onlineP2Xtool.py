@@ -114,8 +114,9 @@ d.configure_title(
     font='Courier',
     anchor='start',
 )
-d.configure_text(color='black')
-st.altair_chart(d, use_container_width=True)
+textd = alt.Chart(chart_data2).mark_text(color='black')
+d+ textd
+#st.altair_chart(d, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
 discountRate2 = round(discountRate*100,1)
 npv             = npf.npv(discountRate, cf)
@@ -133,7 +134,7 @@ c = alt.Chart(chart_data3).mark_bar().encode(
      x='Year:O',y="Acc Disc Cash Flows in Million €",color=alt.value('#ffe300')).configure(background='white').properties(
     title='Accumulated Discounted Cash Flows'
 )
-d.configure_title(
+c.configure_title(
     fontSize=20,
     font='Courier',
     anchor='start',
