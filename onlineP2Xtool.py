@@ -109,7 +109,7 @@ d = alt.Chart(chart_data2).mark_bar().encode(
      x='Year:O',y='Non-disc Cash Flows in Million €:Q',color=alt.value('#ffe300')).configure(background='white').properties(
     title='Non-discounted Cash Flows'
 )
-textd = d.mark_text()encode(color='black')
+textd = d.mark_text().encode(color='black')
 d + textd
 #st.altair_chart(d, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
