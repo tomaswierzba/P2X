@@ -104,10 +104,10 @@ for i in range(1, lifetime+1):
 for t in range (1,len(cf)):
     cf[t] = -CAPEX_electrolyser * electrolyser_STACK_replacement * years_of_stack_replacement[t] /1e+6 + (- OPEX_yearly + Hydrogen_income_yearly[t])/1e+6
 year=np.linspace(0, lifetime,lifetime+1)
-chart_data2 = pd.DataFrame({'Year':year,'Non-disc Cash Flows in Million €':cf})
+chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flows in Million €':cf})
 d = alt.Chart(chart_data2).mark_bar().encode(
-     x='Year:O',y='Non-disc Cash Flows in Million €:Q',color=alt.value('#ffe300')).properties(
-    title='NEXP2X Business-Case Tool',width= 600, height= 400
+     x='Year:O',y='Non-discounted Cash Flows in Million €:Q',color=alt.value('#ffe300')).properties(
+    title='Non-discounted Cash Flows',width= 600, height= 400
 ).configure_title(
     fontSize=30,
     fontWeight=900,
@@ -115,7 +115,7 @@ d = alt.Chart(chart_data2).mark_bar().encode(
     anchor='middle',
     color='#f0f2f6'
 ).configure_axis(titleColor='#f0f2f6',labelAngle=0, labelFont='monospace',labelFontSize=15, titleFont='monospace',titleFontSize=15)
-#Non-discounted Cash Flows
+#
 st.altair_chart(d, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
 discountRate2 = round(discountRate*100,1)
