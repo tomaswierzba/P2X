@@ -106,7 +106,7 @@ for t in range (1,len(cf)):
 year=np.linspace(0, lifetime,lifetime+1)
 chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flows in Million €':cf})
 d = alt.Chart(chart_data2).mark_bar().encode(
-     x='Year:O',y='Non-discounted Cash Flows in Million €:Q',color=alt.value('#ffe300')).properties(
+     x='Year:O',y='Non-discounted Cash Flows in Million €:Q',color=alt.value('#142330')).properties(
     title='Non-discounted Cash Flows',width= 600, height= 400
 ).configure(background='white').configure_title(
     fontSize=30,
@@ -114,7 +114,7 @@ d = alt.Chart(chart_data2).mark_bar().encode(
     font='monospace',
     anchor='middle',
     color='#142330'
-).configure_axis(titleColor='#142330',labelColor='#142330',labelAngle=0, labelFont='monospace',labelFontSize=15, titleFont='monospace',titleFontSize=15)
+).configure_axis(titleColor='#142330',labelColor='#142330',labelAngle=0, labelFont='monospace',labelFontSize=15, titleFont='monospace',titleFontSize=15, gridColor='black')
 st.altair_chart(d, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
 discountRate2 = round(discountRate*100,1)
