@@ -114,7 +114,7 @@ d = alt.Chart(chart_data2).mark_bar().encode(
     font='monospace',
     anchor='middle',
     color='#f0f2f6'
-).configure_axis(titleColor='#ffe300',labelAngle=0, labelFont='monospace',labelFontSize=30)
+).configure_axis(titleColor='#f0f2f6',labelAngle=0, labelFont='monospace',labelFontSize=15, titleFont='monospace',titleFontSize=15)
 #Non-discounted Cash Flows
 st.altair_chart(d, use_container_width=True)
 #------------------------------------NPV--------------------------------------------------------------------------------------
