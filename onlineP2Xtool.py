@@ -108,8 +108,7 @@ chart_data2 = pd.DataFrame({'Year':year,'Non-disc Cash Flows in Million €':cf}
 d = alt.Chart(chart_data2).mark_bar().encode(
      x='Year:O',y='Non-disc Cash Flows in Million €:Q',color=alt.value('#ffe300')).properties(
     title='Non-discounted Cash Flows',width= 600, height= 400
-)
-d.configure_title(lineHeight=100,
+).configure(lineHeight=100,
     fontSize=100,
     font='Courier',
     anchor='start',
