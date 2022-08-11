@@ -23,7 +23,7 @@ import altair as alt
 #IRR
 
 from PIL import Image
-image = Image.open('HG_Color_hori_back.png')
+image = Image.open('HG_Flat_hori.png')
 image2 = Image.open('HG_Yellow_hori.png')
 
 
