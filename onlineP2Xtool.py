@@ -16,7 +16,7 @@ import altair as alt
 
 
 #Edition
-color_sidebar_text="black"
+color_sidebar_text="f0f2f6"
 #OUTPUTS VANILLA VERSION
 #Optimal size of electrolyzer 
 #Optimal Operational mode
