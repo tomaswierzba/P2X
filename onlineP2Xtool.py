@@ -40,7 +40,7 @@ st.sidebar.image(image2)
 st.sidebar.write(""" # Key variables""")
 st.sidebar.write("This tool assumes a 1 MW electrolyzer. Main variables for this business case-study can be changed in the left pane and their initial values repesent SOEC technology.")
 
-new_title = '<p style="font-family:monospace; color:Black; font-size: 30px;">Market prices</p>'
+new_title = '<p style="font-family:monospace; color:Black; font-size: 20px;">Market prices</p>'
 st.sidebar.markdown(new_title, unsafe_allow_html=True)
 #Decide future Hydrogen price
 Hydrogen_price = st.sidebar.slider('What is the future average Hydrogen sales price in €/kg?', 0, 15,6,1)
