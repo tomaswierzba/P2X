@@ -60,14 +60,13 @@ full_load_hours= st.sidebar.slider('Full-load hours of operation in a year: ', 0
 H2_electrolyser_input_1000 = st.sidebar.slider('What is the power-to-Hydrogen production ratio kg/MWh? ', 10, 30, 23,1)
 H2_electrolyser_input = H2_electrolyser_input_1000/1000
 
+#Decide technical lifetime of stack
+technical_lifetime_stacks= st.sidebar.slider('Technical lifetime of stacks in full-load hours of operation: ', 0, 100000,20000 ,5000)
 
 new_title5 = '<p style="font-size:20px;font-weight:600;color:#f0f2f6">Financial</p>'
 st.sidebar.markdown(new_title5, unsafe_allow_html=True)
 #Decide Specific capex
 electrolyser_specific_invest= st.sidebar.slider('What is the electrolyzer capital investment in €/kW? ', 0, 5000, 3000,250)
-
-#Decide technical lifetime of stack
-technical_lifetime_stacks= st.sidebar.slider('Technical lifetime of stacks in full-load hours of operation: ', 0, 100000,20000 ,5000)
 
 #Decide OPEX % of CAPEX
 electrolyser_OPEX_percentage2= st.sidebar.slider('What is the % CAPEX spent in O&M yearly (stack replacement cost not included)? ', 0, 20, 5,1)
