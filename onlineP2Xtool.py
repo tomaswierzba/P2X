@@ -30,7 +30,7 @@ st.image(image, caption=None)
 
 new_title0 = '<p style="font-size:45px;font-weight:600;color:black;text-align:center;">NEXP2X Business-Case Tool</p>'
 st.write(new_title0, unsafe_allow_html=True)
-
+st.write(""" # NEXP2X Business-Case Tool """ )
 #Explain assumptions here
 
 electrolyser_nom_cap = 1000 #kW
