@@ -150,7 +150,7 @@ c = alt.Chart(chart_data3).mark_bar().encode(
 st.altair_chart(c, use_container_width=True)
 
 if all(e <= 0 for e in NPV):
-    a101="Not feasible in 27"
+    a101="Not feasible"
     #st.write('Project is not profitable in 27 years')
 else:
     a101 = a1010
