@@ -28,8 +28,9 @@ image2 = Image.open('HG_Yellow_hori.png')
 
 st.image(image, caption=None)
 
-new_title0 = '<p style="font-size:45px;font-weight:700;color:black;text-align:center;">NEXP2X Business-Case Tool</p>'
+new_title0 = '<p style="text-align:center;">NEXP2X Business-Case Tool</p>' #font-size:45px;font-weight:700;color:black;
 st.write(new_title0, unsafe_allow_html=True)
+
 #Explain assumptions here
 
 electrolyser_nom_cap = 1000 #kW
