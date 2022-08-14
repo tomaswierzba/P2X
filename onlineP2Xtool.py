@@ -45,8 +45,8 @@ new_title2 = '<p style="font-size:20px;font-weight:600;color:#f0f2f6">Market pri
 st.sidebar.markdown(new_title2, unsafe_allow_html=True)
 #Decide future Hydrogen price
 new_title6 = '<p style="font-size:20px;font-weight:600;color:#f0f2f6">What is the future average Hydrogen sales price in €/kg?</p>'
-st.sidebar.markdown(new_title6, unsafe_allow_html=True)
-Hydrogen_price = st.sidebar.slider(label=None,0, 15,6,1)
+label=st.sidebar.markdown(new_title6, unsafe_allow_html=True)
+Hydrogen_price = st.sidebar.slider(label,0, 15,6,1)
 
 #Decide average electricity spot price
 Electricity_spot_MWh = st.sidebar.slider('What is the average electricity spot price in €/MWh? ', 0, 200, 60,10)
