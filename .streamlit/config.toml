@@ -166,7 +166,7 @@
 base="light"
 primaryColor="#ffe300"
 backgroundColor="white"
-textColor="black"
+textColor="#f0f2f6"
 
 # The preset Streamlit theme that your custom theme inherits from. One of "light" or "dark".
 # base =
