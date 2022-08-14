@@ -156,11 +156,11 @@ else:
     a101 = "%s years" % (a1010)
     #st.write('Payback time: %s years' % (a1010))
 
-st.write('Net present value: %s M€ (%s %% discount rate)' % (npv2,discountRate2))
+#st.write('Net present value: %s M€ (%s %% discount rate)' % (npv2,discountRate2))
 #------------------------------------IRR---------------------------------------------------------------------------------------------
 IRR = npf.irr(cf)
 IRR2 = round(IRR*100,1)
-st.write('IRR: %s %%' % (IRR2))
+#st.write('IRR: %s %%' % (IRR2))
 #Hydrogen Price independent
 #------------------------------------LCoH-----------------------------------------------------------------------------------
 Expenses = np.zeros(lifetime +1) #expenses plus electricity income in €/year
@@ -169,17 +169,18 @@ for t in range(1,len(cf)):
 Expenses[0] = -cf[0]*1e+6
 LCoH = npf.npv(discountRate,Expenses)/npf.npv(discountRate, Hydrogen_production_yearly)
 LCoH2 = round(LCoH,1)
-st.write('Levelized Cost of Hydrogen: %s €/kg (%s %% discount rate)' % (LCoH2,discountRate2))
+#st.write('Levelized Cost of Hydrogen: %s €/kg (%s %% discount rate)' % (LCoH2,discountRate2))
 
 
 #------------------------------------Show results-----------------------------------------------------------------
 #new_title7 = '<p style="font-size:45px;font-weight:700;color:black;text-align:center;">Results</p>'
 #st.write(new_title7, unsafe_allow_html=True)
 st.write(""" # Results """)
-col1, col2, col3 = st.columns(3)
+col1, col2, col3 = st.columns(4)
 col1.metric("Payback time:", '%s' % (a101))
-col2.metric("Wind", "9 mph", "-8%")
-col3.metric("Humidity", "86%", "4%")
+col2.metric("NPV", "%s M€"  % (npv2))
+col3.metric("IRR", "%s %", % (IRR2))
+col4.metric("LCoH", "%s €/kg", % (LCoH2))
 
 
 
