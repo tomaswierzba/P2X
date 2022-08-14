@@ -150,9 +150,11 @@ c = alt.Chart(chart_data3).mark_bar().encode(
 st.altair_chart(c, use_container_width=True)
 
 if all(e <= 0 for e in NPV):
-    st.write('Project is not profitable in 27 years')
+    a101="Not feasible in 27"
+    #st.write('Project is not profitable in 27 years')
 else:
-    st.write('Payback time: %s years' % (a1010))
+    a101 = a1010
+    #st.write('Payback time: %s years' % (a1010))
 
 st.write('Net present value: %s M€ (%s %% discount rate)' % (npv2,discountRate2))
 #------------------------------------IRR---------------------------------------------------------------------------------------------
@@ -175,7 +177,7 @@ st.write('Levelized Cost of Hydrogen: %s €/kg (%s %% discount rate)' % (LCoH2,
 #st.write(new_title7, unsafe_allow_html=True)
 st.write(""" # Results """)
 col1, col2, col3 = st.columns(3)
-col1.metric("Payback time:", '%s years' % (a1010))
+col1.metric("Payback time:", '%s years' % (a101))
 col2.metric("Wind", "9 mph", "-8%")
 col3.metric("Humidity", "86%", "4%")
 
