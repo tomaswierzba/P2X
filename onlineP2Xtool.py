@@ -171,19 +171,6 @@ LCoH = npf.npv(discountRate,Expenses)/npf.npv(discountRate, Hydrogen_production_
 LCoH2 = round(LCoH,1)
 #st.write('Levelized Cost of Hydrogen: %s €/kg (%s %% discount rate)' % (LCoH2,discountRate2))
 
-
-#------------------------------------Show results-----------------------------------------------------------------
-#new_title7 = '<p style="font-size:45px;font-weight:700;color:black;text-align:center;">Results</p>'
-#st.write(new_title7, unsafe_allow_html=True)
-st.write(""" # Results """)
-col1, col2, col3, col4 = st.columns(4)
-col1.metric("Payback time:", '%s' % (a101))
-col2.metric("NPV", "%s M€"  % (npv2))
-col3.metric("IRR", "%s %%" % (IRR2))
-col4.metric("LCoH", "%s €/kg" % (LCoH2))
-
-
-
 #------------------------------------LCoH per expense-----------------------------------------------------------------
 OPEX_electrolyser_yearly_v = np.zeros(lifetime+1)
 OPEX_electrolyser_yearly_v[0] = 0
@@ -236,6 +223,17 @@ data = {
 }
 a20 = max(data, key=data.get)
 per_main_costdriver = round(data[a20] / LCoH * 100 )
-st.write("The main cost-driver for the Levelized Cost of Hydrogen is found to be %s, accounting for %s %% of the cost." % (a20, per_main_costdriver))
+
+#------------------------------------Show results-----------------------------------------------------------------
+#new_title7 = '<p style="font-size:45px;font-weight:700;color:black;text-align:center;">Results</p>'
+#st.write(new_title7, unsafe_allow_html=True)
+st.write(""" # Results """)
+col1, col2, col3, col4, col5 = st.columns(5)
+col1.metric("Payback time", '%s' % (a101))
+col2.metric("NPV", "%s M€"  % (npv2))
+col3.metric("IRR", "%s %%" % (IRR2))
+col4.metric("LCoH", "%s €/kg" % (LCoH2))
+col5.metric("Cost-driver","%s (%s)" % (a20, per_main_costdriver))
+#st.write("The main cost-driver for the Levelized Cost of Hydrogen is found to be %s, accounting for %s %% of the cost." % (a20, per_main_costdriver))
 st.write("What's your next action towards 100% renewables?")
 st.write("Let's create more value together, send us an e-mail to info@hybridgreentech.com")
