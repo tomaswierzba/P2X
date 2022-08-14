@@ -28,7 +28,8 @@ image2 = Image.open('HG_Yellow_hori.png')
 
 st.image(image, caption=None)
 
-st.write(""" # NEXP2X Business-Case Tool""")
+new_title0 = '<p style="font-size:40px;font-weight:600;color:#f0f2f6">NEXP2X Business-Case Tool</p>'
+st.write(new_title0, unsafe_allow_html=True)
 
 #Explain assumptions here
 
