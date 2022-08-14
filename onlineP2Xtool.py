@@ -28,9 +28,9 @@ image2 = Image.open('HG_Yellow_hori.png')
 
 st.image(image, caption=None)
 
-new_title0 = '<p style="text-align:center;">NEXP2X Business-Case Tool</p>' #font-size:45px;font-weight:700;color:black;
-st.write(new_title0, unsafe_allow_html=True)
-
+#new_title0 = '<p style="font-size:45px;font-weight:700;color:black;text-align:center;">NEXP2X Business-Case Tool</p>' 
+#st.write(new_title0, unsafe_allow_html=True)
+st.write(""" # NEXP2X Business-Case Tool """)
 #Explain assumptions here
 
 electrolyser_nom_cap = 1000 #kW
@@ -171,8 +171,9 @@ st.write('Levelized Cost of Hydrogen: %s €/kg (%s %% discount rate)' % (LCoH2,
 
 
 #------------------------------------Show results-----------------------------------------------------------------
-new_title7 = '<p style="font-size:45px;font-weight:700;color:black;text-align:center;">Results</p>'
-st.write(new_title7, unsafe_allow_html=True)
+#new_title7 = '<p style="font-size:45px;font-weight:700;color:black;text-align:center;">Results</p>'
+#st.write(new_title7, unsafe_allow_html=True)
+st.write(""" # Results """)
 col1, col2, col3 = st.columns(3)
 col1.metric("Payback time:", '%s years' % (a1010))
 col2.metric("Wind", "9 mph", "-8%")
