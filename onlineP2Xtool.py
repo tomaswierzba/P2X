@@ -44,13 +44,15 @@ st.sidebar.write(new_title3, unsafe_allow_html=True)
 new_title2 = '<p style="font-size:20px;font-weight:600;color:#f0f2f6">Market prices</p>'
 st.sidebar.markdown(new_title2, unsafe_allow_html=True)
 #Decide future Hydrogen price
-Hydrogen_price = st.sidebar.slider('What is the future average Hydrogen sales price in €/kg?', 0, 15,6,1)
+new_title6 = '<p style="font-size:20px;font-weight:600;color:#f0f2f6">What is the future average Hydrogen sales price in €/kg?</p>'
+Hydrogen_price = st.sidebar.slider(new_title6, unsafe_allow_html=True, 0, 15,6,1)
 
 #Decide average electricity spot price
 Electricity_spot_MWh = st.sidebar.slider('What is the average electricity spot price in €/MWh? ', 0, 200, 60,10)
 Electricity_spot = Electricity_spot_MWh/1000
 
-st.sidebar.markdown(""" # Technical""")
+new_title4 = '<p style="font-size:20px;font-weight:600;color:#f0f2f6">Technical</p>'
+st.sidebar.markdown(new_title4, unsafe_allow_html=True)
 #Decide how many full-load hours of operation will the electrolyzer run in a year
 full_load_hours= st.sidebar.slider('Full-load hours of operation in a year: ', 0, 8760, 7500,100)
 
@@ -59,7 +61,8 @@ H2_electrolyser_input_1000 = st.sidebar.slider('What is the power-to-Hydrogen pr
 H2_electrolyser_input = H2_electrolyser_input_1000/1000
 
 
-st.sidebar.markdown(""" # Financial""")
+new_title5 = '<p style="font-size:20px;font-weight:600;color:#f0f2f6">Financial</p>'
+st.sidebar.markdown(new_title5, unsafe_allow_html=True)
 #Decide Specific capex
 electrolyser_specific_invest= st.sidebar.slider('What is the electrolyzer capital investment in €/kW? ', 0, 5000, 3000,250)
 
