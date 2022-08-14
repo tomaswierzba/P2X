@@ -40,6 +40,7 @@ st.sidebar.image(image2)
 st.sidebar.write(""" # Key variables""")
 st.sidebar.write("This tool assumes a 1 MW electrolyzer. Main variables for this business case-study can be changed in the left pane and their initial values repesent SOEC technology.")
 
+st.markdown.write(""" # Market prices""")
 #Decide future Hydrogen price
 Hydrogen_price = st.sidebar.slider('What is the future average Hydrogen sales price in €/kg?', 0, 15,6,1)
 
@@ -47,6 +48,7 @@ Hydrogen_price = st.sidebar.slider('What is the future average Hydrogen sales pr
 Electricity_spot_MWh = st.sidebar.slider('What is the average electricity spot price in €/MWh? ', 0, 200, 60,10)
 Electricity_spot = Electricity_spot_MWh/1000
 
+st.markdown.write(""" # Technical""")
 #Decide how many full-load hours of operation will the electrolyzer run in a year
 full_load_hours= st.sidebar.slider('Full-load hours of operation in a year: ', 0, 8760, 7500,100)
 
@@ -54,6 +56,8 @@ full_load_hours= st.sidebar.slider('Full-load hours of operation in a year: ', 0
 H2_electrolyser_input_1000 = st.sidebar.slider('What is the power-to-Hydrogen production ratio kg/MWh? ', 10, 30, 23,1)
 H2_electrolyser_input = H2_electrolyser_input_1000/1000
 
+
+st.markdown.write(""" # Financial""")
 #Decide Specific capex
 electrolyser_specific_invest= st.sidebar.slider('What is the electrolyzer capital investment in €/kW? ', 0, 5000, 3000,250)
 
