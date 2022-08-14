@@ -38,7 +38,8 @@ st.sidebar.image(image2)
 
 new_title1 = '<p style="font-size:25px;font-weight:600;color:#f0f2f6">Key variables</p>'
 st.sidebar.write(new_title1, unsafe_allow_html=True)
-st.sidebar.write("This tool assumes a 1 MW electrolyzer. Main variables for this business case-study can be changed in the left pane and their initial values repesent SOEC technology.")
+new_title3 = '<p style="font-size:10px;font-weight:600;color:#f0f2f6">This tool assumes a 1 MW electrolyzer. Main variables for this business case-study can be changed in the left pane and their initial values repesent SOEC technology.</p>'
+st.sidebar.write(new_title3, unsafe_allow_html=True)
 
 new_title2 = '<p style="font-size:20px;font-weight:600;color:#f0f2f6">Market prices</p>'
 st.sidebar.markdown(new_title2, unsafe_allow_html=True)
