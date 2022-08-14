@@ -30,7 +30,6 @@ image2 = Image.open('HG_Yellow_hori.png')
 st.image(image, caption=None)
 
 st.write(""" # NEXP2X Business-Case Tool""")
-st.write("This tool assumes a 1 MW electrolyzer. Main variables for this business case-study can be changed in the left pane and their initial values repesent SOEC technology.")
 
 #Explain assumptions here
 
@@ -39,6 +38,7 @@ electrolyser_nom_cap = 1000 #kW
 st.sidebar.image(image2)
 
 st.sidebar.write(""" # Key variables""")
+st.sidebar.write("This tool assumes a 1 MW electrolyzer. Main variables for this business case-study can be changed in the left pane and their initial values repesent SOEC technology.")
 
 #Decide future Hydrogen price
 Hydrogen_price = st.sidebar.slider('What is the future average Hydrogen sales price in €/kg?', 0, 15,6,1)
