@@ -173,7 +173,7 @@ st.write('Levelized Cost of Hydrogen: %s €/kg (%s %% discount rate)' % (LCoH2,
 new_title7 = '<p style="font-size:45px;font-weight:700;color:black;text-align:center;">Results</p>'
 st.write(new_title7, unsafe_allow_html=True)
 col1, col2, col3 = st.columns(3)
-col1.metric("Payback time:", '%s years' % (a1010), unsafe_allow_html=True)
+col1.metric("Payback time:", '%s years' % (a1010))
 col2.metric("Wind", "9 mph", "-8%")
 col3.metric("Humidity", "86%", "4%")
 
