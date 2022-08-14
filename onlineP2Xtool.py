@@ -179,8 +179,8 @@ st.write(""" # Results """)
 col1, col2, col3 = st.columns(4)
 col1.metric("Payback time:", '%s' % (a101))
 col2.metric("NPV", "%s M€"  % (npv2))
-col3.metric("IRR", "%s %", % (IRR2))
-col4.metric("LCoH", "%s €/kg", % (LCoH2))
+col3.metric("IRR", "%s %" % (IRR2))
+col4.metric("LCoH", "%s €/kg" % (LCoH2))
 
 
 
