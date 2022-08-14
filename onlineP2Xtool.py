@@ -111,7 +111,6 @@ d = alt.Chart(chart_data2).mark_bar().encode(
 ).configure(background='white').configure_title(
     fontSize=30,
     fontWeight=900,
-    font='monospace',
     anchor='middle',
     color='black'
 ).configure_axis(titleColor='black',labelColor='black',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black')
