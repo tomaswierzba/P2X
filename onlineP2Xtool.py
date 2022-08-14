@@ -168,6 +168,17 @@ LCoH = npf.npv(discountRate,Expenses)/npf.npv(discountRate, Hydrogen_production_
 LCoH2 = round(LCoH,1)
 st.write('Levelized Cost of Hydrogen: %s €/kg (%s %% discount rate)' % (LCoH2,discountRate2))
 
+
+#------------------------------------Show results-----------------------------------------------------------------
+new_title7 = '<p style="font-size:45px;font-weight:700;color:black;text-align:center;">Results</p>'
+st.write(new_title7, unsafe_allow_html=True)
+col1, col2, col3 = st.columns(3)
+col1.metric("Payback time:", a1010 +'years')
+col2.metric("Wind", "9 mph", "-8%")
+col3.metric("Humidity", "86%", "4%")
+
+
+
 #------------------------------------LCoH per expense-----------------------------------------------------------------
 OPEX_electrolyser_yearly_v = np.zeros(lifetime+1)
 OPEX_electrolyser_yearly_v[0] = 0
