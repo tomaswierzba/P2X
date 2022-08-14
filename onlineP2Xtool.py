@@ -117,13 +117,13 @@ chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flows in Million �
 d = alt.Chart(chart_data2).mark_bar().encode(
      x='Year:O',y='Non-discounted Cash Flows in Million €:Q',color=alt.value('#ffe300')).properties(
     title='Non-discounted Cash Flows',width= 600, height= 400
-).configure(background='white').configure_title(
+).configure_title(
     fontSize=30,
     fontWeight=900,
     anchor='middle',
     color='black'
-).configure_axis(titleColor='black',labelColor='black',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='gray')
-st.altair_chart(d, use_container_width=True)
+).configure_axis(titleColor='black',labelColor='black',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='gray') #.configure(background='white')
+st.altair_chart(d, use_container_width=True) 
 #------------------------------------NPV--------------------------------------------------------------------------------------
 discountRate2 = round(discountRate*100,1)
 npv             = npf.npv(discountRate, cf)
@@ -138,7 +138,7 @@ for i in range(1,len(cf)):
 
 chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV})
 c = alt.Chart(chart_data3).mark_bar().encode(
-     x='Year:O',y="Acc Disc Cash Flows in Million €",color=alt.value('#ffe300')).configure(background='white').properties(
+     x='Year:O',y="Acc Disc Cash Flows in Million €",color=alt.value('#ffe300')).properties(
     title='Accumulated Discounted Cash Flows'
 ).configure_title(
     fontSize=30,
