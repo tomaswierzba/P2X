@@ -212,6 +212,7 @@ c2 = base.mark_text(radiusOffset=20).encode(text="labels:N")
 
 c1 + c2
 
+st.write(" # Cash flow plots")
 year=np.linspace(0, lifetime,lifetime+1)
 chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flows in Million €':cf})
 d = alt.Chart(chart_data2).mark_bar().encode(
@@ -222,7 +223,7 @@ d = alt.Chart(chart_data2).mark_bar().encode(
     fontWeight=900,
     anchor='middle',
     color='#f0f2f6'
-).configure_axis(titleColor='black',labelColor='black',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black') #.configure(background='white')
+).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black') #.configure(background='white')
 st.altair_chart(d, use_container_width=True) 
 
 chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV})
@@ -234,7 +235,7 @@ c = alt.Chart(chart_data3).mark_bar().encode(
     fontWeight=900,
     anchor='middle',
     color='#f0f2f6'
-).configure_axis(titleColor='black',labelColor='black',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black')
+).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black')
 
 st.altair_chart(c, use_container_width=True)
 
