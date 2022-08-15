@@ -31,6 +31,12 @@ st.image(image, caption=None)
 #new_title0 = '<p style="font-size:45px;font-weight:700;color:black;text-align:center;">NEXP2X Business-Case Tool</p>' 
 #st.write(new_title0, unsafe_allow_html=True)
 st.write(""" # NEXP2X Business-Case Tool """)
+
+
+st.warning("What's your next action towards 100% renewables?")
+st.warning("Let's create more value together, send us an e-mail to info@hybridgreentech.com")
+
+
 #Explain assumptions here
 
 electrolyser_nom_cap = 1000 #kW
@@ -239,5 +245,3 @@ c = alt.Chart(chart_data3).mark_bar().encode(
 
 st.altair_chart(c, use_container_width=True)
 
-st.write("What's your next action towards 100% renewables?")
-st.write("Let's create more value together, send us an e-mail to info@hybridgreentech.com")
