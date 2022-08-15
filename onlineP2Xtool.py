@@ -250,7 +250,14 @@ c = alt.Chart(chart_data3).mark_bar().encode(
 
 rule = alt.Chart(chart_data3).mark_line(color='green').encode(
     x='Payback Time:Q'
-) 
+).interactive().properties(
+    title='Accumulated Discounted Cash Flows',width= 600, height= 400
+).configure_title(
+    fontSize=25,
+    fontWeight=900,
+    anchor='middle',
+    color='#f0f2f6'
+).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black')
 #.add_selection(brush)
 c+rule
 
