@@ -220,7 +220,7 @@ d = alt.Chart(chart_data2).mark_bar().encode(
 ).configure_title(
     fontSize=25,
     fontWeight=900,
-    anchor='left',
+    anchor='start',
     color='#f0f2f6'
 ).configure_axis(titleColor='black',labelColor='black',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='gray') #.configure(background='white')
 st.altair_chart(d, use_container_width=True) 
