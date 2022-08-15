@@ -256,7 +256,7 @@ chart_data4 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV
 line = alt.Chart(chart_data4).mark_rule(color='red').encode( x='Year:O',y="Acc Disc Cash Flows in Million €")
 
 text = line.mark_text(
-    align='left',
+    align='right',
     baseline='middle',
     dx=7
 ).encode(
@@ -264,5 +264,5 @@ text = line.mark_text(
 )
 
 g=(c+line+text).interactive().properties(
-    title='Accumulated Discounted Cash Flows',width= 600, height= 400).configure_title(fontSize=25,fontWeight=900,anchor='middle',color='#f0f2f6').configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black').configure_line()
+    title='Accumulated Discounted Cash Flows',width= 600, height= 400).configure_title(fontSize=25,fontWeight=900,anchor='middle',color='#f0f2f6').configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black')
 st.altair_chart(g, use_container_width=True) 
