@@ -195,7 +195,7 @@ col4.metric("LCoH", "%s €/kg" % (LCoH2))
 st.metric("Cost-driver","%s (%s %% of the cost)" % (a20, per_main_costdriver))
 #st.write("The main cost-driver for the Levelized Cost of Hydrogen is found to be %s, accounting for %s %% of the cost." % (a20, per_main_costdriver))
 
-st.write("The radial plot below shows the levelised cost contributions of the main cost-drivers for Hydrogen:")
+st.write(" # Levelised cost contributions for Hydrogen")
 source = pd.DataFrame({"Values": [LCoH_electricity_cost2,LCoH_capex2,LCoH_stack_rep_cost2, LCoH_opex_electrolyser2],"Cost contribution": ['Electricity','CAPEX','Stack Replacement','O&M Electrolyzer'],"labels":["%s €/kg" % (LCoH_electricity_cost2),"%s €/kg" % (LCoH_capex2),"%s €/kg" % (LCoH_stack_rep_cost2),"%s €/kg" % (LCoH_opex_electrolyser2)]})
 domain = ['Electricity','CAPEX','Stack Replacement','O&M Electrolyzer']
 range_ = ['#142330', '#194366', '#f0f2f6', '#ffe300']
