@@ -250,4 +250,6 @@ c = alt.Chart(chart_data3).mark_bar().encode(
 
 #.add_selection(brush)
 
-st.altair_chart(c, use_container_width=True) 
+rule = alt.Chart(chart_data3).mark_line().encode(x='Payback Time:Q', color='Payback Time:Q')
+
+st.altair_chart(c + rule, use_container_width=True) 
