@@ -250,7 +250,7 @@ c = alt.Chart(chart_data3).mark_bar().encode(
 for i in range(0,len(cf)):
     year[i]=a1010
 label=['']*len(cf)
-label[0]='Payback Time'
+label[1]='Payback Time'
 chart_data4 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV, "Label":label})    
   
 line = alt.Chart(chart_data4).mark_rule(color='red').encode( x='Year:O',y="Acc Disc Cash Flows in Million €")
