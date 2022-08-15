@@ -258,8 +258,8 @@ line = alt.Chart(chart_data4).mark_rule(color='red').encode( x='Year:O',y="Acc D
 text = line.mark_text(
     align='right',
     baseline='middle',
-    dx=7
-).encode(
+    dx=20
+, color= 'red').encode(
     text='Label'
 )
 
