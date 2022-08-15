@@ -177,23 +177,6 @@ for t in range(1,len(cf)):
 LCoH_stack_rep_cost = npf.npv(discountRate,stack_replacement_cost_v)/npf.npv(discountRate, Hydrogen_production_yearly)
 LCoH_stack_rep_cost2 = round(LCoH_stack_rep_cost,1)
 
-st.write("The radial plot below shows the levelised cost contributions of the main cost-drivers for Hydrogen:")
-source = pd.DataFrame({"Values": [LCoH_electricity_cost2,LCoH_capex2,LCoH_stack_rep_cost2, LCoH_opex_electrolyser2],"Cost contribution": ['Electricity','CAPEX','Stack Replacement','O&M Electrolyzer'],"labels":["%s €/kg" % (LCoH_electricity_cost2),"%s €/kg" % (LCoH_capex2),"%s €/kg" % (LCoH_stack_rep_cost2),"%s €/kg" % (LCoH_opex_electrolyser2)]})
-domain = ['Electricity','CAPEX','Stack Replacement','O&M Electrolyzer']
-range_ = ['#142330', '#194366', '#f0f2f6', '#ffe300']
-base = alt.Chart(source).encode(
-    theta=alt.Theta("Values:Q", stack=True), color=alt.Color('Cost contribution:N', scale=alt.Scale(domain=domain, range=range_)),
-    radius=alt.Radius("Values:Q", scale=alt.Scale(type="sqrt", zero=True, rangeMin=20)),
-)
-
-c1 = base.mark_arc(innerRadius=20)
-
-c2 = base.mark_text(radiusOffset=20).encode(text="labels:N")
-#c2 = base.mark_text(radiusOffset=10, align='left',
- #   baseline='middle').encode(text="Values:Q", color=alt.value('white'))
-
-c1 + c2
-
 data = {
 'Electricity':LCoH_electricity_cost2,'CAPEX':LCoH_capex2,'Stack Replacement':LCoH_stack_rep_cost2, 'OPEX':LCoH_opex_electrolyser2
 }
@@ -211,6 +194,23 @@ col3.metric("IRR", "%s %%" % (IRR2))
 col4.metric("LCoH", "%s €/kg" % (LCoH2))
 st.metric("Cost-driver","%s (%s %% of the cost)" % (a20, per_main_costdriver))
 #st.write("The main cost-driver for the Levelized Cost of Hydrogen is found to be %s, accounting for %s %% of the cost." % (a20, per_main_costdriver))
+
+st.write("The radial plot below shows the levelised cost contributions of the main cost-drivers for Hydrogen:")
+source = pd.DataFrame({"Values": [LCoH_electricity_cost2,LCoH_capex2,LCoH_stack_rep_cost2, LCoH_opex_electrolyser2],"Cost contribution": ['Electricity','CAPEX','Stack Replacement','O&M Electrolyzer'],"labels":["%s €/kg" % (LCoH_electricity_cost2),"%s €/kg" % (LCoH_capex2),"%s €/kg" % (LCoH_stack_rep_cost2),"%s €/kg" % (LCoH_opex_electrolyser2)]})
+domain = ['Electricity','CAPEX','Stack Replacement','O&M Electrolyzer']
+range_ = ['#142330', '#194366', '#f0f2f6', '#ffe300']
+base = alt.Chart(source).encode(
+    theta=alt.Theta("Values:Q", stack=True), color=alt.Color('Cost contribution:N', scale=alt.Scale(domain=domain, range=range_)),
+    radius=alt.Radius("Values:Q", scale=alt.Scale(type="sqrt", zero=True, rangeMin=20)),
+)
+
+c1 = base.mark_arc(innerRadius=20)
+
+c2 = base.mark_text(radiusOffset=20).encode(text="labels:N")
+#c2 = base.mark_text(radiusOffset=10, align='left',
+ #   baseline='middle').encode(text="Values:Q", color=alt.value('white'))
+
+c1 + c2
 
 year=np.linspace(0, lifetime,lifetime+1)
 chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flows in Million €':cf})
