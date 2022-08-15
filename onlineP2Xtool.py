@@ -241,7 +241,7 @@ for i in range(0,len(cf)):
     vec[i]=a1010
 
 brush = alt.selection_interval()
-chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV)
+chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV})
 
 c = alt.Chart(chart_data3).mark_bar().encode(
      x='Year:O',y="Acc Disc Cash Flows in Million €", color=alt.value('#ffe300') )
