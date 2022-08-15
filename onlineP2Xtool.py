@@ -245,7 +245,7 @@ c = alt.Chart(chart_data3).mark_bar().encode(
     color='#f0f2f6'
 ).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black').add_selection(
     brush
-)
+).interactive()
 
 st.altair_chart(c, use_container_width=True)
 
