@@ -239,7 +239,13 @@ st.altair_chart(d, use_container_width=True)
 brush = alt.selection_interval()
 chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV,"Payback Time":a1010})
 c = alt.Chart(chart_data3).mark_bar().encode(
-     x='Year:O',y="Acc Disc Cash Flows in Million €", color=alt.value('#ffe300') ).interactive().properties(
+     x='Year:O',y="Acc Disc Cash Flows in Million €", color=alt.value('#ffe300') )
+
+rule = alt.Chart(chart_data3).mark_line(color='green').encode(
+    x='Payback Time:Q'
+)
+
+c.interactive().properties(
     title='Accumulated Discounted Cash Flows',width= 600, height= 400
 ).configure_title(
     fontSize=25,
@@ -249,9 +255,7 @@ c = alt.Chart(chart_data3).mark_bar().encode(
 ).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black') #.add_selection(brush)
 
 
-rule = alt.Chart(chart_data3).mark_line(color='green').encode(
-    x='Payback Time:Q'
-)
+
 
 st.altair_chart(c+rule, use_container_width=True)
 
