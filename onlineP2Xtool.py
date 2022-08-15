@@ -260,7 +260,7 @@ text = alt.Chart(chart_data4).mark_text(
     baseline='middle',
     dx=7
 ).encode(
-    text='label'
+    text='Label'
 )
 
 g=(c+line+text).interactive().properties(
