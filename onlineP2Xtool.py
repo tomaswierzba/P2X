@@ -218,10 +218,10 @@ d = alt.Chart(chart_data2).mark_bar().encode(
      x='Year:O',y='Non-discounted Cash Flows in Million €:Q',color=alt.value('#ffe300')).properties(
     title='Non-discounted Cash Flows',width= 600, height= 400
 ).configure_title(
-    fontSize=30,
+    fontSize=25,
     fontWeight=900,
-    anchor='middle',
-    color='black'
+    anchor='left',
+    color='#f0f2f6'
 ).configure_axis(titleColor='black',labelColor='black',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='gray') #.configure(background='white')
 st.altair_chart(d, use_container_width=True) 
 
