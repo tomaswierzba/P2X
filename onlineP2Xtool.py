@@ -230,7 +230,7 @@ d = alt.Chart(chart_data2).mark_bar().encode(
     fontWeight=900,
     anchor='middle',
     color='#f0f2f6'
-).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black').add_selection(
+).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black') #.add_selection(
     brush2
 )
     #.configure(background='white')
@@ -248,7 +248,7 @@ c = alt.Chart(chart_data3).mark_bar().encode(
     fontWeight=900,
     anchor='middle',
     color='#f0f2f6'
-).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black').add_selection(
+).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black') #.add_selection(
     brush
 )
 
