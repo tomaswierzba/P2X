@@ -236,10 +236,6 @@ d = alt.Chart(chart_data2).mark_bar().encode(
 
 st.altair_chart(d, use_container_width=True) 
 
-vec=np.zeros(len(cf))
-for i in range(0,len(cf)):
-    vec[i]=a1010
-
 brush = alt.selection_interval()
 chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV})
 
@@ -247,21 +243,26 @@ c = alt.Chart(chart_data3).mark_bar().encode(
      x='Year:O',y="Acc Disc Cash Flows in Million €", color=alt.value('#ffe300') )
 #.add_selection(brush)
 
-for i in range(0,len(cf)):
-    year[i]=a1010
-label=['']*len(cf)
-label[1]='Payback Time'
-chart_data4 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV, "Label":label})    
-  
-line = alt.Chart(chart_data4).mark_rule(color='red').encode( x='Year:O',y="Acc Disc Cash Flows in Million €")
+if all(e <= 0 for e in NPV):
+    for i in range(0,len(cf)):
+        year[i]=a1010
 
-text = line.mark_text(
-    align='right',
-    baseline='middle',
-    dx=-10
-, color= 'red').encode(
-    text='Label'
-)
+    label=['']*len(cf)
+    label[1]='Payback Time'
+    chart_data4 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV, "Label":label})    
+
+    line = alt.Chart(chart_data4).mark_rule(color='red').encode( x='Year:O',y="Acc Disc Cash Flows in Million €")
+
+    text = line.mark_text(
+        align='right',
+        baseline='middle',
+        dx=-10
+    , color= 'red').encode(
+        text='Label'
+    )
+else:
+    line=alt.Chart(chart_data3).mark_rule()
+    text=alt.Chart(chart_data3).mark_text()
 
 g=(c+line+text).interactive().properties(
     title='Accumulated Discounted Cash Flows',width= 600, height= 400).configure_title(fontSize=25,fontWeight=900,anchor='middle',color='#f0f2f6').configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black').configure_line(fontStyle='dash', fontWeight=900).configure_text(fontSize=15,fontWeight='bold')
