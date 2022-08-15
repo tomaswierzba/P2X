@@ -223,7 +223,7 @@ st.write(" # Cash flow plots")
 year=np.linspace(0, lifetime,lifetime+1)
 chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flows in Million €':cf})
 d = alt.Chart(chart_data2).mark_bar().encode(
-     x='Year:O',y='Non-discounted Cash Flows in Million €:Q',color=alt.condition(brush, alt.value('#ffe300'), alt.value('lightgray'))).interactive().properties(
+     x='Year:O',y='Non-discounted Cash Flows in Million €:Q',color=alt.condition(brush2, alt.value('#ffe300'), alt.value('lightgray'))).interactive().properties(
     title='Non-discounted Cash Flows',width= 600, height= 400
 ).configure_title(
     fontSize=25,
@@ -231,7 +231,7 @@ d = alt.Chart(chart_data2).mark_bar().encode(
     anchor='middle',
     color='#f0f2f6'
 ).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black').add_selection(
-    brush
+    brush2
 )
     #.configure(background='white')
 
