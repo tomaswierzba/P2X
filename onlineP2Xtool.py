@@ -255,7 +255,7 @@ chart_data4 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV
   
 line = alt.Chart(chart_data4).mark_rule(color='red').encode( x='Year:O',y="Acc Disc Cash Flows in Million €")
 
-text = alt.Chart(chart_data4).mark_text(
+text = line.mark_text(
     align='left',
     baseline='middle',
     dx=7
