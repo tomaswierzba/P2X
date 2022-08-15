@@ -239,7 +239,7 @@ st.altair_chart(d, use_container_width=True)
 vec=np.zeros(len(cf))
 for i in range(0,len(cf)):
     vec[i]=a1010
-end
+
 brush = alt.selection_interval()
 chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV,"Payback Time":vec})
 
