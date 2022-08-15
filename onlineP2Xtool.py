@@ -33,8 +33,8 @@ st.image(image, caption=None)
 st.write(""" # NEXP2X Business-Case Tool """)
 
 
-new_titlea = '<p style="font-size:25px;font-weight:600;color:#f0f2f6;">What your next action towards 100% renewables? Let create more value together, send us an e-mail to info@hybridgreentech.com</p>'
-st.error(new_titlea,unsafe_allow_html=True)
+
+st.error("What's your next action towards 100% renewables? Let's create more value together, send us an e-mail to info@hybridgreentech.com")
 
 
 #Explain assumptions here
