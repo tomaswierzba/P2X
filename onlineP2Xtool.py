@@ -33,8 +33,7 @@ st.image(image, caption=None)
 st.write(""" # NEXP2X Business-Case Tool """)
 
 
-st.error("What's your next action towards 100% renewables?")
-st.error("Let's create more value together, send us an e-mail to info@hybridgreentech.com")
+st.error("What's your next action towards 100% renewables? Let's create more value together, send us an e-mail to info@hybridgreentech.com")
 
 
 #Explain assumptions here
