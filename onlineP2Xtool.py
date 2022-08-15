@@ -223,7 +223,7 @@ st.write(" # Cash flow plots")
 year=np.linspace(0, lifetime,lifetime+1)
 chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flows in Million €':cf})
 d = alt.Chart(chart_data2).mark_bar().encode(
-     x='Year:O',y='Non-discounted Cash Flows in Million €:Q',color=alt.condition(brush2, alt.value('#ffe300'), alt.value('lightgray'))).interactive().properties(
+     x='Year:O',y='Non-discounted Cash Flows in Million €:Q',color=alt.value('#ffe300')).interactive().properties(    #color=alt.condition(brush2, alt.value('#ffe300'), alt.value('lightgray'))
     title='Non-discounted Cash Flows',width= 600, height= 400
 ).configure_title(
     fontSize=25,
@@ -239,7 +239,7 @@ st.altair_chart(d, use_container_width=True)
 brush = alt.selection_interval()
 chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV})
 c = alt.Chart(chart_data3).mark_bar().encode(
-     x='Year:O',y="Acc Disc Cash Flows in Million €", color=alt.condition(brush, alt.value('#ffe300'), alt.value('lightgray'))
+     x='Year:O',y="Acc Disc Cash Flows in Million €", color=alt.value('#ffe300') ) #color=alt.condition(brush, alt.value('#ffe300'), alt.value('lightgray')
 ).interactive().properties(
     title='Accumulated Discounted Cash Flows',width= 600, height= 400
 ).configure_title(
