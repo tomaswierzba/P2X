@@ -230,9 +230,8 @@ d = alt.Chart(chart_data2).mark_bar().encode(
     fontWeight=900,
     anchor='middle',
     color='#f0f2f6'
-).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black') #.configure(background='white').add_selection(
-    brush2
-)
+).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black') #.configure(background='white').add_selection(brush2)
+
 st.altair_chart(d, use_container_width=True) 
 
 brush = alt.selection_interval()
