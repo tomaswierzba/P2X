@@ -241,13 +241,17 @@ for i in range(0,len(cf)):
     vec[i]=a1010
 
 brush = alt.selection_interval()
-chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV,"Payback Time":vec})
+chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV)
 
 c = alt.Chart(chart_data3).mark_bar().encode(
      x='Year:O',y="Acc Disc Cash Flows in Million €", color=alt.value('#ffe300') )
 #.add_selection(brush)
 
-line = alt.Chart(chart_data3).mark_rule(color='green').encode(x=23)
+for i in range(0,len(cf)):
+    year[i]=a1010
+chart_data4 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV})    
+  
+line = alt.Chart(chart_data4).mark_rule(color='green').encode( x='Year:O',y="Acc Disc Cash Flows in Million €")
 
 g=(c+line).interactive().properties(
     title='Accumulated Discounted Cash Flows',width= 600, height= 400).configure_title(fontSize=25,fontWeight=900,anchor='middle',color='#f0f2f6').configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black')
