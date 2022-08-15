@@ -220,9 +220,9 @@ d = alt.Chart(chart_data2).mark_bar().encode(
 ).configure_title(
     fontSize=25,
     fontWeight=900,
-    anchor='start',
+    anchor='middle',
     color='#f0f2f6'
-).configure_axis(titleColor='black',labelColor='black',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='gray') #.configure(background='white')
+).configure_axis(titleColor='black',labelColor='black',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black') #.configure(background='white')
 st.altair_chart(d, use_container_width=True) 
 
 chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV})
@@ -230,11 +230,11 @@ c = alt.Chart(chart_data3).mark_bar().encode(
      x='Year:O',y="Acc Disc Cash Flows in Million €",color=alt.value('#ffe300')).properties(
     title='Accumulated Discounted Cash Flows'
 ).configure_title(
-    fontSize=30,
+    fontSize=25,
     fontWeight=900,
     anchor='middle',
-    color='black'
-).configure_axis(titleColor='black',labelColor='black',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='gray')
+    color='#f0f2f6'
+).configure_axis(titleColor='black',labelColor='black',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black')
 
 st.altair_chart(c, use_container_width=True)
 
