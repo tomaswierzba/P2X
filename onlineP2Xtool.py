@@ -230,10 +230,9 @@ d = alt.Chart(chart_data2).mark_bar().encode(
     fontWeight=900,
     anchor='middle',
     color='#f0f2f6'
-).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black') #.add_selection(
-    brush2
-)
-    #.configure(background='white')
+).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black') 
+#.add_selection(brush2)
+#.configure(background='white')
 
 st.altair_chart(d, use_container_width=True) 
 
@@ -248,9 +247,7 @@ c = alt.Chart(chart_data3).mark_bar().encode(
     fontWeight=900,
     anchor='middle',
     color='#f0f2f6'
-).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black') #.add_selection(
-    brush
-)
+).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black') #.add_selection(brush)
 
 st.altair_chart(c, use_container_width=True)
 
