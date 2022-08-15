@@ -33,7 +33,8 @@ st.image(image, caption=None)
 st.write(""" # NEXP2X Business-Case Tool """)
 
 
-st.error("What's your next action towards 100% renewables? Let's create more value together, send us an e-mail to info@hybridgreentech.com")
+new_title-1 = '<p style="font-size:25px;font-weight:600;color:#f0f2f6">What's your next action towards 100% renewables? Let's create more value together, send us an e-mail to info@hybridgreentech.com</p>'
+st.error(new_title-1,unsafe_allow_html=True)
 
 
 #Explain assumptions here
@@ -197,7 +198,7 @@ col1.metric("Payback time", '%s' % (a101))
 col2.metric("NPV", "%s M€"  % (npv2))
 col3.metric("IRR", "%s %%" % (IRR2))
 col4.metric("LCoH", "%s €/kg" % (LCoH2))
-st.metric("Cost-driver","%s (%s %% of the cost)" % (a20, per_main_costdriver))
+st.metric("Cost-driver","%s (%s %% of cost)" % (a20, per_main_costdriver))
 #st.write("The main cost-driver for the Levelized Cost of Hydrogen is found to be %s, accounting for %s %% of the cost." % (a20, per_main_costdriver))
 
 st.write(" # Levelised cost contributions for Hydrogen")
