@@ -112,18 +112,7 @@ for i in range(1, lifetime+1):
         years_of_stack_replacement[math.ceil(electrolyser_exact_replacement_period*i)]=1
 for t in range (1,len(cf)):
     cf[t] = -CAPEX_electrolyser * electrolyser_STACK_replacement * years_of_stack_replacement[t] /1e+6 + (- OPEX_yearly + Hydrogen_income_yearly[t])/1e+6
-year=np.linspace(0, lifetime,lifetime+1)
-chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flows in Million €':cf})
-d = alt.Chart(chart_data2).mark_bar().encode(
-     x='Year:O',y='Non-discounted Cash Flows in Million €:Q',color=alt.value('#ffe300')).properties(
-    title='Non-discounted Cash Flows',width= 600, height= 400
-).configure_title(
-    fontSize=30,
-    fontWeight=900,
-    anchor='middle',
-    color='black'
-).configure_axis(titleColor='black',labelColor='black',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='gray') #.configure(background='white')
-st.altair_chart(d, use_container_width=True) 
+
 #------------------------------------NPV--------------------------------------------------------------------------------------
 discountRate2 = round(discountRate*100,1)
 npv             = npf.npv(discountRate, cf)
@@ -135,19 +124,6 @@ for i in range(1,len(cf)):
     if NPV[i]>=0:
         if NPV[i-1]<=0:
             a1010=i
-
-chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV})
-c = alt.Chart(chart_data3).mark_bar().encode(
-     x='Year:O',y="Acc Disc Cash Flows in Million €",color=alt.value('#ffe300')).properties(
-    title='Accumulated Discounted Cash Flows'
-).configure_title(
-    fontSize=30,
-    fontWeight=900,
-    anchor='middle',
-    color='black'
-).configure_axis(titleColor='black',labelColor='black',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='gray')
-
-st.altair_chart(c, use_container_width=True)
 
 if all(e <= 0 for e in NPV):
     a101="N/A"
@@ -235,5 +211,32 @@ col3.metric("IRR", "%s %%" % (IRR2))
 col4.metric("LCoH", "%s €/kg" % (LCoH2))
 st.metric("Cost-driver","%s (%s %% of the cost)" % (a20, per_main_costdriver))
 #st.write("The main cost-driver for the Levelized Cost of Hydrogen is found to be %s, accounting for %s %% of the cost." % (a20, per_main_costdriver))
+
+year=np.linspace(0, lifetime,lifetime+1)
+chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flows in Million €':cf})
+d = alt.Chart(chart_data2).mark_bar().encode(
+     x='Year:O',y='Non-discounted Cash Flows in Million €:Q',color=alt.value('#ffe300')).properties(
+    title='Non-discounted Cash Flows',width= 600, height= 400
+).configure_title(
+    fontSize=30,
+    fontWeight=900,
+    anchor='middle',
+    color='black'
+).configure_axis(titleColor='black',labelColor='black',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='gray') #.configure(background='white')
+st.altair_chart(d, use_container_width=True) 
+
+chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV})
+c = alt.Chart(chart_data3).mark_bar().encode(
+     x='Year:O',y="Acc Disc Cash Flows in Million €",color=alt.value('#ffe300')).properties(
+    title='Accumulated Discounted Cash Flows'
+).configure_title(
+    fontSize=30,
+    fontWeight=900,
+    anchor='middle',
+    color='black'
+).configure_axis(titleColor='black',labelColor='black',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='gray')
+
+st.altair_chart(c, use_container_width=True)
+
 st.write("What's your next action towards 100% renewables?")
 st.write("Let's create more value together, send us an e-mail to info@hybridgreentech.com")
