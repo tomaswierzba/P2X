@@ -239,8 +239,8 @@ st.altair_chart(d, use_container_width=True)
 brush = alt.selection_interval()
 chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV})
 c = alt.Chart(chart_data3).mark_bar().encode(
-     x='Year:O',y="Acc Disc Cash Flows in Million €", color=alt.value('#ffe300') ) #color=alt.condition(brush, alt.value('#ffe300'), alt.value('lightgray')
-).interactive().properties(
+     x='Year:O',y="Acc Disc Cash Flows in Million €", color=alt.value('#ffe300') ) #color=alt.condition(brush, alt.value('#ffe300'), alt.value('lightgray'))
+.interactive().properties(
     title='Accumulated Discounted Cash Flows',width= 600, height= 400
 ).configure_title(
     fontSize=25,
