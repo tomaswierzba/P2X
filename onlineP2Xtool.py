@@ -250,5 +250,5 @@ c = alt.Chart(chart_data3).mark_bar().encode(
     x='Payback Time:Q'
 ) 
 #.add_selection(brush)
-st.altair_chart(c+rule, use_container_width=True)
+st.altair_chart(c, use_container_width=True)
 
