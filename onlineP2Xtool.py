@@ -250,5 +250,5 @@ c = alt.Chart(chart_data3).mark_bar().encode(
 
 
 #.add_selection(brush)
-rule+c
 
+st.altair_chart(rule+c, use_container_width=True) 
