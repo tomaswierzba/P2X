@@ -244,6 +244,9 @@ c = alt.Chart(chart_data3).mark_bar().encode(
 #.add_selection(brush)
 
 if all(e <= 0 for e in NPV):
+    line=alt.Chart(chart_data3).mark_rule()
+    text=alt.Chart(chart_data3).mark_text()
+else:
     for i in range(0,len(cf)):
         year[i]=a1010
 
@@ -260,9 +263,6 @@ if all(e <= 0 for e in NPV):
     , color= 'red').encode(
         text='Label'
     )
-else:
-    line=alt.Chart(chart_data3).mark_rule()
-    text=alt.Chart(chart_data3).mark_text()
 
 g=(c+line+text).interactive().properties(
     title='Accumulated Discounted Cash Flows',width= 600, height= 400).configure_title(fontSize=25,fontWeight=900,anchor='middle',color='#f0f2f6').configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black').configure_line(fontStyle='dash', fontWeight=900).configure_text(fontSize=15,fontWeight='bold')
