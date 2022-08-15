@@ -243,8 +243,16 @@ c = alt.Chart(chart_data3).mark_bar().encode(
      x='Year:O',y="Acc Disc Cash Flows in Million €", color=alt.value('#ffe300') )
 #.add_selection(brush)
 
+img = alt.Chart({
+    "values": [{"url": "https://i.imgur.com/zHqeoHB.png"}]
+}).mark_image(opacity=0.5).encode(
+    x=alt.value(270), x2=alt.value(300),  # pixels from left
+    y=alt.value(320), y2=alt.value(350),  # pixels from top
+    url="url:N"
+)
+
 if all(e <= 0 for e in NPV):
-    g=c.interactive().properties(
+    g=(c + img).interactive().properties(
         title='Accumulated Discounted Cash Flows',width= 600, height= 400).configure_title(fontSize=25,fontWeight=900,anchor='middle',color='#f0f2f6').configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black').configure_line(fontStyle='dash', fontWeight=900).configure_text(fontSize=15,fontWeight='bold')
     st.altair_chart(g, use_container_width=True) 
 else:
@@ -265,6 +273,6 @@ else:
         text='Label'
     )
 
-    g=(c+line+text).interactive().properties(
+    g=(c+line+text+img).interactive().properties(
         title='Accumulated Discounted Cash Flows',width= 600, height= 400).configure_title(fontSize=25,fontWeight=900,anchor='middle',color='#f0f2f6').configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black').configure_line(fontStyle='dash', fontWeight=900).configure_text(fontSize=15,fontWeight='bold')
     st.altair_chart(g, use_container_width=True) 
