@@ -253,16 +253,16 @@ label=['']*len(cf)
 label[1]='Payback Time'
 chart_data4 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV, "Label":label})    
   
-line = alt.Chart(chart_data4).mark_rule(color='black').encode( x='Year:O',y="Acc Disc Cash Flows in Million €")
+line = alt.Chart(chart_data4).mark_rule(color='red').encode( x='Year:O',y="Acc Disc Cash Flows in Million €")
 
 text = line.mark_text(
     align='right',
     baseline='middle',
     dx=-10
-, color= 'black').encode(
+, color= 'red').encode(
     text='Label'
 )
 
 g=(c+line+text).interactive().properties(
-    title='Accumulated Discounted Cash Flows',width= 600, height= 400).configure_title(fontSize=25,fontWeight=900,anchor='middle',color='#f0f2f6').configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black').configure_line(font='dashed', fontWeight='bold').configure_text(fontSize=15,fontWeight='bold')
+    title='Accumulated Discounted Cash Flows',width= 600, height= 400).configure_title(fontSize=25,fontWeight=900,anchor='middle',color='#f0f2f6').configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black').configure_line(fontStyle='dashed', fontWeight=900).configure_text(fontSize=15,fontWeight='bold')
 st.altair_chart(g, use_container_width=True) 
