@@ -246,8 +246,8 @@ c = alt.Chart(chart_data3).mark_bar().encode(
 img = alt.Chart({
     "values": [{"url": "https://i.imgur.com/zHqeoHB.png"}]
 }).mark_image(opacity=0.5).encode(
-    x=alt.value(10), x2=alt.value(15),  # pixels from left
-    y=alt.value(1), y2=alt.value(1.5),  # pixels from top
+    x=alt.value(300), x2=alt.value(330),  # pixels from left
+    y=alt.value(100), y2=alt.value(130),  # pixels from top
     url="url:N"
 )
 
