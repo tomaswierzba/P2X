@@ -21,7 +21,10 @@ import altair as alt
 #LCoH
 #IRR
 
-from PIL import Image
+
+from IPython.display import Image
+import base64, io, IPython
+from PIL import Image 
 image = Image.open('HG_Flat_hori.png')
 image2 = Image.open('HG_Yellow_hori.png')
 
@@ -243,7 +246,15 @@ c = alt.Chart(chart_data3).mark_bar().encode(
      x='Year:O',y="Acc Disc Cash Flows in Million €", color=alt.value('#ffe300') )
 #.add_selection(brush)
 
-img_source = pd.DataFrame({"x": 0.5, "y": 0.5,"values": image})
+imgCode = []
+
+image = Image.open('HG_Flat_hori.png')
+output = io.BytesIO()    
+image.save(output, format='PNG')
+encoded_string = "data:image/png;base64,"+base64.b64encode(output.getvalue()).decode()
+imgCode.append(encoded_string)
+
+img_source = pd.DataFrame({"x": 0.5, "y": 0.5,"values": imgCode})
 img = alt.Chart(img_source).mark_image(opacity=0.5,
     width=50,
     height=50
