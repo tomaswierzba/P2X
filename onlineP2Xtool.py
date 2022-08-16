@@ -254,7 +254,7 @@ image.save(output, format='PNG')
 encoded_string = "data:image/png;base64,"+base64.b64encode(output.getvalue()).decode()
 imgCode.append(encoded_string)
 
-img_source = pd.DataFrame({"x": 0.5, "y": 0.5,"values": imgCode})
+img_source = pd.DataFrame({"x": 10, "y": -2,"values": imgCode})
 img = alt.Chart(img_source).mark_image(opacity=0.5,
     width=50,
     height=50
