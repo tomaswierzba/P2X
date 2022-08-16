@@ -33,11 +33,11 @@ st.image(image, caption=None)
 
 #new_title0 = '<p style="font-size:45px;font-weight:700;color:black;text-align:center;">NEXP2X Business-Case Tool</p>' 
 #st.write(new_title0, unsafe_allow_html=True)
-st.write(""" # NEXP2X Business-Case Tool """)
+st.write(""" # Electrolyzer Business-Case Tool """)
+
+st.write(""" 'Created in the NEXP2X project - funded by Innovation Fund Denmark """)
 
 
-
-st.error("What's your next action towards 100% renewables? Let's create more value together, send us an e-mail to info@hybridgreentech.com")
 
 
 #Explain assumptions here
@@ -54,11 +54,11 @@ st.sidebar.write(new_title3, unsafe_allow_html=True)
 new_title2 = '<p style="font-size:20px;font-weight:600;color:#f0f2f6">Market prices</p>'
 st.sidebar.markdown(new_title2, unsafe_allow_html=True)
 #Decide future Hydrogen price
-Hydrogen_price = st.sidebar.slider('What is the future average Hydrogen sales price in €/kg',0, 15,6,1)
+Hydrogen_price = st.sidebar.slider('Average Hydrogen sales price in €/kg:',0, 15,6,1)
 
 
 #Decide average electricity spot price
-Electricity_spot_MWh = st.sidebar.slider('What is the average electricity spot price in €/MWh? ', 0, 200, 60,10)
+Electricity_spot_MWh = st.sidebar.slider('Average electricity spot price in €/MWh: ', 0, 200, 60,10)
 Electricity_spot = Electricity_spot_MWh/1000
 
 new_title4 = '<p style="font-size:20px;font-weight:600;color:#f0f2f6">Technical</p>'
@@ -67,7 +67,7 @@ st.sidebar.markdown(new_title4, unsafe_allow_html=True)
 full_load_hours= st.sidebar.slider('Full-load hours of operation in a year: ', 0, 8760, 7500,100)
 
 #Decide power-to-hydrogen production ratio
-H2_electrolyser_input_1000 = st.sidebar.slider('What is the power-to-Hydrogen production ratio kg/MWh? ', 10, 30, 23,1)
+H2_electrolyser_input_1000 = st.sidebar.slider('Power-to-Hydrogen production ratio in kg/MWh: ', 10, 30, 23,1)
 H2_electrolyser_input = H2_electrolyser_input_1000/1000
 
 #Decide technical lifetime of stack
@@ -76,10 +76,10 @@ technical_lifetime_stacks= st.sidebar.slider('Technical lifetime of stacks in fu
 new_title5 = '<p style="font-size:20px;font-weight:600;color:#f0f2f6">Financial</p>'
 st.sidebar.markdown(new_title5, unsafe_allow_html=True)
 #Decide Specific capex
-electrolyser_specific_invest= st.sidebar.slider('What is the electrolyzer capital investment in €/kW? ', 0, 5000, 3000,250)
+electrolyser_specific_invest= st.sidebar.slider('Electrolyzer capital investment in €/kW: ', 0, 5000, 3000,250)
 
 #Decide OPEX % of CAPEX
-electrolyser_OPEX_percentage2= st.sidebar.slider('What is the % CAPEX spent in O&M yearly (stack replacement cost not included)? ', 0, 20, 5,1)
+electrolyser_OPEX_percentage2= st.sidebar.slider('O&M yearly (stack replacement cost not included) in % CAPEX: ', 0, 20, 5,1)
 electrolyser_OPEX_percentage = electrolyser_OPEX_percentage2/100
 
 #Decide stack replacement cost
@@ -87,10 +87,10 @@ electrolyser_STACK_replacement_100 = st.sidebar.slider('Stack replacement cost a
 electrolyser_STACK_replacement = electrolyser_STACK_replacement_100/100
 
 #Decide project lifetime
-lifetime = st.sidebar.slider('What is the project lifetime in years?', 0, 30,25,1)
+lifetime = st.sidebar.slider('Project lifetime in years:', 0, 30,25,1)
 
 #Decide discount rate
-discountRate_100 = st.sidebar.slider('What is the desired discount rate?', 0, 50, 5,1)
+discountRate_100 = st.sidebar.slider('Desired discount rate:', 0, 50, 5,1)
 discountRate = discountRate_100/100
 
 #-----------------------------------OPEX---------------------------------------------------------------------------------------
@@ -125,7 +125,7 @@ for t in range (1,len(cf)):
 #------------------------------------NPV--------------------------------------------------------------------------------------
 discountRate2 = round(discountRate*100,1)
 npv             = npf.npv(discountRate, cf)
-npv2 = round(npv,2)
+npv2 = round(npv,1)
 NPV = np.zeros(len(cf))
 for i in range(0,len(cf)):
     NPV[i] = npf.npv(discountRate, cf[0:(i+1)])
@@ -144,7 +144,7 @@ else:
 #st.write('Net present value: %s M€ (%s %% discount rate)' % (npv2,discountRate2))
 #------------------------------------IRR---------------------------------------------------------------------------------------------
 IRR = npf.irr(cf)
-IRR2 = round(IRR*100,1)
+IRR2 = round(IRR*100,0)
 #st.write('IRR: %s %%' % (IRR2))
 #Hydrogen Price independent
 #------------------------------------LCoH-----------------------------------------------------------------------------------
@@ -282,3 +282,5 @@ else:
     g=(c+line+text).interactive().properties(
         title='Accumulated Discounted Cash Flows',width= 600, height= 400).configure_title(fontSize=25,fontWeight=900,anchor='middle',color='#f0f2f6').configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black').configure_line(fontStyle='dash', fontWeight=900).configure_text(fontSize=15,fontWeight='bold') #.configure_image(opacity=0.5,width=50,height=50)
     st.altair_chart(g, use_container_width=True) 
+    
+    st.write(" # What's your next action towards 100% renewables? Let's create more value together, send us an e-mail to info@hybridgreentech.com")
