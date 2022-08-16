@@ -257,8 +257,23 @@ imgCode = []
 #img_source = pd.DataFrame({"x": 10, "y": -2,"value": imgCode})
 #img = alt.Chart(img_source).mark_image().encode( x='x',y='y',url='value')
 
+source = pd.DataFrame.from_records([
+      {"x": 0.5, "y": 0.5, "imga": "https://vega.github.io/vega-datasets/data/ffox.png"},
+      {"x": 1.5, "y": 1.5, "imga": "https://vega.github.io/vega-datasets/data/gimp.png"},
+      {"x": 2.5, "y": 2.5, "imga": "https://vega.github.io/vega-datasets/data/7zip.png"}
+])
+
+img = alt.Chart(source).mark_image(
+    width=50,
+    height=50
+).encode(
+    x='x',
+    y='y',
+    url='imga'
+)
+
 if all(e <= 0 for e in NPV):
-    g=(c).interactive().properties(
+    g=(c+img).interactive().properties(
         title='Accumulated Discounted Cash Flows',width= 600, height= 400).configure_title(fontSize=25,fontWeight=900,anchor='middle',color='#f0f2f6').configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black').configure_line(fontStyle='dash', fontWeight=900).configure_text(fontSize=15,fontWeight='bold')
     st.altair_chart(g, use_container_width=True) 
 else:
@@ -279,7 +294,7 @@ else:
         text='Label'
     )
 
-    g=(c+line+text).interactive().properties(
+    g=(c+line+text+img).interactive().properties(
         title='Accumulated Discounted Cash Flows',width= 600, height= 400).configure_title(fontSize=25,fontWeight=900,anchor='middle',color='#f0f2f6').configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black').configure_line(fontStyle='dash', fontWeight=900).configure_text(fontSize=15,fontWeight='bold') #.configure_image(opacity=0.5,width=50,height=50)
     st.altair_chart(g, use_container_width=True) 
     
