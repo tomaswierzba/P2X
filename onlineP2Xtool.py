@@ -79,7 +79,7 @@ st.sidebar.markdown(new_title5, unsafe_allow_html=True)
 electrolyser_specific_invest= st.sidebar.slider('Electrolyzer capital investment in €/kW: ', 0, 5000, 3000,250)
 
 #Decide OPEX % of CAPEX
-electrolyser_OPEX_percentage2= st.sidebar.slider('O&M yearly in % CAPEX (without stack replacement): ', 0, 20, 5,1)
+electrolyser_OPEX_percentage2= st.sidebar.slider('O&M yearly in % CAPEX (Stack replacement cost not included): ', 0, 20, 5,1)
 electrolyser_OPEX_percentage = electrolyser_OPEX_percentage2/100
 
 #Decide stack replacement cost
