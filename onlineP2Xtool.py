@@ -244,11 +244,11 @@ c = alt.Chart(chart_data3).mark_bar().encode(
 #.add_selection(brush)
 
 img = alt.Chart({
-    "values": [{"url": "https://i.imgur.com/zHqeoHB.png"}]
+    "values": image
 }).mark_image(opacity=0.5).encode(
     x=alt.value(300), x2=alt.value(330),  # pixels from left
     y=alt.value(100), y2=alt.value(130),  # pixels from top
-    url="url:N"
+    url="values:N"
 )
 
 if all(e <= 0 for e in NPV):
