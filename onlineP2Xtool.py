@@ -79,7 +79,7 @@ st.sidebar.markdown(new_title5, unsafe_allow_html=True)
 electrolyser_specific_invest= st.sidebar.slider('Electrolyzer capital investment in €/kW: ', 0, 5000, 3000,250)
 
 #Decide OPEX % of CAPEX
-electrolyser_OPEX_percentage2= st.sidebar.slider('O&M yearly in % CAPEX (Stack replacement cost not included): ', 0, 20, 5,1)
+electrolyser_OPEX_percentage2= st.sidebar.slider('O&M yearly in % CAPEX (excluding Stack replacement): ', 0, 20, 5,1)
 electrolyser_OPEX_percentage = electrolyser_OPEX_percentage2/100
 
 #Decide stack replacement cost
@@ -198,7 +198,7 @@ per_main_costdriver = round(data[a20] / LCoH * 100 )
 st.write(""" # Results """)
 col1, col2, col3, col4, col5 = st.columns(5)
 col1.metric("Payback time", '%s' % (a101))
-col2.metric("NPV", "%s M€"  % (npv2))
+col2.metric("NPV", "%s M€/MW"  % (npv2))
 col3.metric("IRR", "%s %%" % (IRR2))
 col4.metric("LCoH", "%s €/kg" % (LCoH2))
 st.metric("Cost-driver","%s (%s %% of cost)" % (a20, per_main_costdriver))
