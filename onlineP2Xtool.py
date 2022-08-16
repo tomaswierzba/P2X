@@ -263,7 +263,7 @@ source = pd.DataFrame.from_records([
       {"x": 2.5, "y": 2.5, "imga": "https://vega.github.io/vega-datasets/data/7zip.png"}
 ])
 
-img = alt.Chart(source).mark_image(
+img = alt.Chart(source).mark_image(opacity=0.5,
     width=50,
     height=50
 ).encode(
