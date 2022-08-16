@@ -71,7 +71,7 @@ H2_electrolyser_input_1000 = st.sidebar.slider('Power-to-Hydrogen production rat
 H2_electrolyser_input = H2_electrolyser_input_1000/1000
 
 #Decide technical lifetime of stack
-technical_lifetime_stacks= st.sidebar.slider('Technical lifetime of stacks in full-load hours of operation: ', 0, 100000,20000 ,5000)
+technical_lifetime_stacks= st.sidebar.slider('Stacks lifetime in full-load hours of operation: ', 0, 100000,20000 ,5000)
 
 new_title5 = '<p style="font-size:20px;font-weight:600;color:#f0f2f6">Financial</p>'
 st.sidebar.markdown(new_title5, unsafe_allow_html=True)
