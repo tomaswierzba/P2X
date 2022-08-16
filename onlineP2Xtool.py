@@ -256,7 +256,7 @@ imgCode = []
 
 #img_source = pd.DataFrame({"x": 10, "y": -2,"value": imgCode})
 #img = alt.Chart(img_source).mark_image().encode( x='x',y='y',url='value')
-xposim = lifetime/2
+xposim = round(lifetime/2)
 yposim = (NPV[0] + NPV[len(cf) - 1])/2
 
 source = pd.DataFrame.from_records([
