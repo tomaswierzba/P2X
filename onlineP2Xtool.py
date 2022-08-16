@@ -234,7 +234,7 @@ xposim2 = round(lifetime/2)
 yposim2 = (cf[0] + cf[len(cf) - 1])/2
 
 source2 = pd.DataFrame.from_records([
-      {"Year": xposim2, "Non-discounted Cash Flows in Million €": yposim2, "imga": "https://raw.githubusercontent.com/tomaswierzba/P2X/main/HG_Yellow_hori.png"}
+      {"Year": xposim2, "Non-discounted Cash Flows in Million €": yposim2, "imga2": "https://raw.githubusercontent.com/tomaswierzba/P2X/main/HG_Yellow_hori.png"}
 ])
 
 img2 = alt.Chart(source2).mark_image(opacity=0.5,
