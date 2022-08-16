@@ -285,6 +285,6 @@ else:
     
 
 st.write(" #  What's your next action towards 100% renewables?")
-new_title100 = '<p style="font-size:20px;font-weight:600;color:#ffe300;<a href = "mailto: abc@example.com">"> Let''s create more value together, send us an e-mail to <a>info@hybridgreentech.com</a></p>'
+new_title100 = '<p style="font-size:20px;font-weight:600;color:#ffe300; href = "mailto: abc@example.com"> Let''s create more value together, send us an e-mail to <a>info@hybridgreentech.com</a></p>'
 st.write(new_title100, unsafe_allow_html=True)
 st.write("Let's create more value together, send us an e-mail to info@hybridgreentech.com")
