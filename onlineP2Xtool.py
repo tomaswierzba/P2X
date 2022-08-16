@@ -258,9 +258,7 @@ imgCode = []
 #img = alt.Chart(img_source).mark_image().encode( x='x',y='y',url='value')
 
 source = pd.DataFrame.from_records([
-      {"x": 0.5, "y": 0.5, "imga": "https://vega.github.io/vega-datasets/data/ffox.png"},
-      {"x": 1.5, "y": 1.5, "imga": "https://vega.github.io/vega-datasets/data/gimp.png"},
-      {"x": 2.5, "y": 2.5, "imga": "https://vega.github.io/vega-datasets/data/7zip.png"}
+      {"x": 0.5, "y": 0.5, "imga": "https://vega.github.io/vega-datasets/data/ffox.png"}
 ])
 
 img = alt.Chart(source).mark_image(opacity=0.5,
