@@ -35,7 +35,7 @@ st.image(image, caption=None)
 #st.write(new_title0, unsafe_allow_html=True)
 st.write(""" # Electrolyzer Business-Case Tool """)
 
-st.write(""" 'Created in the NEXP2X project - funded by Innovation Fund Denmark """)
+st.write(""" Created in the NEXP2X project - Funded by Innovation Fund Denmark """)
 
 
 
