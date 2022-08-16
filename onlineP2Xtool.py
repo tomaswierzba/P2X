@@ -246,13 +246,6 @@ c = alt.Chart(chart_data3).mark_bar().encode(
      x='Year:O',y="Acc Disc Cash Flows in Million €", color=alt.value('#ffe300') )
 #.add_selection(brush)
 
-imgCode = []
-
-image = Image.open('HG_Flat_hori.png')
-output = io.BytesIO()    
-image.save(output, format='PNG')
-encoded_string = "data:image/png;base64,"+base64.b64encode(output.getvalue()).decode()
-imgCode.append(encoded_string)
 
 #img_source = pd.DataFrame({"x": 10, "y": -2,"value": imgCode})
 #img = alt.Chart(img_source).mark_image().encode( x='x',y='y',url='value')
@@ -260,7 +253,7 @@ xposim = round(lifetime/2)
 yposim = (NPV[0] + NPV[len(cf) - 1])/2
 
 source = pd.DataFrame.from_records([
-      {"Year": xposim, "Acc Disc Cash Flows in Million €": yposim, "imga": imgCode}
+      {"Year": xposim, "Acc Disc Cash Flows in Million €": yposim, "imga": "https://github.com/tomaswierzba/P2X/blob/main/HG_Flat_hori.png"}
 ])
 
 img = alt.Chart(source).mark_image(opacity=0.5,
