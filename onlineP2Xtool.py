@@ -253,7 +253,7 @@ xposim = round(lifetime/2)
 yposim = (NPV[0] + NPV[len(cf) - 1])/2
 
 source = pd.DataFrame.from_records([
-      {"Year": xposim, "Acc Disc Cash Flows in Million €": yposim, "imga": "https://github.com/tomaswierzba/P2X/blob/main/HG_Flat_hori.png"}
+      {"Year": xposim, "Acc Disc Cash Flows in Million €": yposim, "imga": "https://vega.github.io/vega-datasets/data/ffox.png"}
 ])
 
 img = alt.Chart(source).mark_image(opacity=0.5,
