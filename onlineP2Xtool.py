@@ -243,12 +243,15 @@ c = alt.Chart(chart_data3).mark_bar().encode(
      x='Year:O',y="Acc Disc Cash Flows in Million €", color=alt.value('#ffe300') )
 #.add_selection(brush)
 
-img = alt.Chart({
+img = alt.Chart({"x": 0.5, "y": 0.5,
     "values": image
-}).mark_image(opacity=0.5).encode(
-    x=alt.value(300), x2=alt.value(330),  # pixels from left
-    y=alt.value(100), y2=alt.value(130),  # pixels from top
-    url="values:N"
+}).mark_image(opacity=0.5,
+    width=50,
+    height=50
+).encode(
+    x='x',
+    y='y',
+    url='values'
 )
 
 if all(e <= 0 for e in NPV):
