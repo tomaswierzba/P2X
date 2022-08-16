@@ -221,12 +221,32 @@ c2 = base.mark_text(radiusOffset=20).encode(text="labels:N")
 
 c1 + c2
 
+
+
 brush2 = alt.selection_interval()
 st.write(" # Cash flow plots")
 year=np.linspace(0, lifetime,lifetime+1)
 chart_data2 = pd.DataFrame({'Year':year,'Non-discounted Cash Flows in Million €':cf})
 d = alt.Chart(chart_data2).mark_bar().encode(
-     x='Year:O',y='Non-discounted Cash Flows in Million €:Q',color=alt.value('#ffe300')).interactive().properties(    #color=alt.condition(brush2, alt.value('#ffe300'), alt.value('lightgray'))
+     x='Year:O',y='Non-discounted Cash Flows in Million €:Q',color=alt.value('#ffe300'))
+
+xposim2 = round(lifetime/2)
+yposim2 = (cf[0] + cf[len(cf) - 1])/2
+
+source2 = pd.DataFrame.from_records([
+      {"Year": xposim2, "Non-discounted Cash Flows in Million €": yposim2, "imga": "https://raw.githubusercontent.com/tomaswierzba/P2X/main/HG_Yellow_hori.png"}
+])
+
+img2 = alt.Chart(source2).mark_image(opacity=0.5,
+    width=300,
+    height=100
+).encode(
+    x='Year:O',
+    y='Non-discounted Cash Flows in Million €:Q',
+    url='imga2'
+)
+
+k=(d+img2)..interactive().properties(    #color=alt.condition(brush2, alt.value('#ffe300'), alt.value('lightgray'))
     title='Non-discounted Cash Flows',width= 600, height= 400
 ).configure_title(
     fontSize=25,
@@ -234,21 +254,16 @@ d = alt.Chart(chart_data2).mark_bar().encode(
     anchor='middle',
     color='#f0f2f6'
 ).configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black') 
-#.add_selection(brush2)
-#.configure(background='white')
 
-st.altair_chart(d, use_container_width=True) 
+st.altair_chart(k, use_container_width=True) 
 
 brush = alt.selection_interval()
 chart_data3 = pd.DataFrame({'Year':year,"Acc Disc Cash Flows in Million €":NPV})
 
 c = alt.Chart(chart_data3).mark_bar().encode(
      x='Year:O',y="Acc Disc Cash Flows in Million €", color=alt.value('#ffe300') )
-#.add_selection(brush)
 
 
-#img_source = pd.DataFrame({"x": 10, "y": -2,"value": imgCode})
-#img = alt.Chart(img_source).mark_image().encode( x='x',y='y',url='value')
 xposim = round(lifetime/2)
 yposim = (NPV[0] + NPV[len(cf) - 1])/2
 
@@ -257,8 +272,8 @@ source = pd.DataFrame.from_records([
 ])
 
 img = alt.Chart(source).mark_image(opacity=0.5,
-    width=50,
-    height=50
+    width=300,
+    height=100
 ).encode(
     x='Year:O',
     y='Acc Disc Cash Flows in Million €',
