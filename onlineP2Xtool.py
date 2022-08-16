@@ -246,7 +246,7 @@ img2 = alt.Chart(source2).mark_image(opacity=0.5,
     url='imga2'
 )
 
-k=(d+img2)..interactive().properties(    #color=alt.condition(brush2, alt.value('#ffe300'), alt.value('lightgray'))
+k=(d+img2).interactive().properties(    #color=alt.condition(brush2, alt.value('#ffe300'), alt.value('lightgray'))
     title='Non-discounted Cash Flows',width= 600, height= 400
 ).configure_title(
     fontSize=25,
