@@ -256,9 +256,11 @@ imgCode = []
 
 #img_source = pd.DataFrame({"x": 10, "y": -2,"value": imgCode})
 #img = alt.Chart(img_source).mark_image().encode( x='x',y='y',url='value')
+xposim = lifetime/2
+yposim = (NPV[0] + NPV[len(cf)])/2
 
 source = pd.DataFrame.from_records([
-      {"Year": 3, "Acc Disc Cash Flows in Million €": 0.5, "imga": "https://vega.github.io/vega-datasets/data/ffox.png"}
+      {"Year": xposim, "Acc Disc Cash Flows in Million €": yposim, "imga": "https://vega.github.io/vega-datasets/data/ffox.png"}
 ])
 
 img = alt.Chart(source).mark_image(opacity=0.5,
@@ -298,6 +300,6 @@ else:
     
 
 st.write(" #  What's your next action towards 100% renewables?")
-new_title100 = '<p style="font-size:20px;font-weight:600;color:##f0f2f6;"><span> Lets create more value together, send us an e-mail to </span><span id="name"><a href = "mailto: info@hybridgreentech.com" style="color:#ffe300">info@hybridgreentech.com</a></span></p>'
+new_title100 = '<p style="font-size:20px;font-weight:600;color:#f0f2f6;"><span> Lets create more value together, send us an e-mail to </span><span id="name"><a href = "mailto: info@hybridgreentech.com" style="color:#ffe300">info@hybridgreentech.com</a></span></p>'
 st.write(new_title100, unsafe_allow_html=True)
 #st.write("Let's create more value together, send us an e-mail to info@hybridgreentech.com")
