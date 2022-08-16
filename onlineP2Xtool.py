@@ -258,15 +258,15 @@ imgCode = []
 #img = alt.Chart(img_source).mark_image().encode( x='x',y='y',url='value')
 
 source = pd.DataFrame.from_records([
-      {"x": 0.5, "y": 0.5, "imga": "https://vega.github.io/vega-datasets/data/ffox.png"}
+      {"Year": 0.5, "Acc Disc Cash Flows in Million €": 0.5, "imga": "https://vega.github.io/vega-datasets/data/ffox.png"}
 ])
 
 img = alt.Chart(source).mark_image(opacity=0.5,
     width=50,
     height=50
 ).encode(
-    x='x',
-    y='y',
+    x='Year',
+    y='Acc Disc Cash Flows in Million €',
     url='imga'
 )
 
