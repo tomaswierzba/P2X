@@ -243,9 +243,10 @@ c = alt.Chart(chart_data3).mark_bar().encode(
      x='Year:O',y="Acc Disc Cash Flows in Million €", color=alt.value('#ffe300') )
 #.add_selection(brush)
 
-img = alt.Chart({"x": 0.5, "y": 0.5,
+img_source = pd.DataFrame.from_records({"x": 0.5, "y": 0.5,
     "values": image
-}).mark_image(opacity=0.5,
+})
+img = alt.Chart(img_source).mark_image(opacity=0.5,
     width=50,
     height=50
 ).encode(
