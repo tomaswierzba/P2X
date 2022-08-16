@@ -35,7 +35,7 @@ st.image(image, caption=None)
 #st.write(new_title0, unsafe_allow_html=True)
 st.write(""" # Electrolyzer Business-Case Tool """)
 
-st.write(""" Created in the NEXP2X project - Funded by Innovation Fund Denmark """)
+st.write(""" Created in the NEXP2X Project - Funded by Innovation Fund Denmark """)
 
 
 
@@ -283,6 +283,6 @@ else:
         title='Accumulated Discounted Cash Flows',width= 600, height= 400).configure_title(fontSize=25,fontWeight=900,anchor='middle',color='#f0f2f6').configure_axis(titleColor='#f0f2f6',labelColor='#f0f2f6',labelAngle=0,labelFontSize=15,titleFontSize=15, gridColor='black').configure_line(fontStyle='dash', fontWeight=900).configure_text(fontSize=15,fontWeight='bold') #.configure_image(opacity=0.5,width=50,height=50)
     st.altair_chart(g, use_container_width=True) 
     
-new_title100 = '<p style="font-size:40px;font-weight:600;color:#f0f2f6">What is your next action towards 100% renewables?</p>'
+new_title100 = '<p style="font-size:40px;font-weight:600;color:#ffe300">What is your next action towards 100% renewables?</p>'
 st.write(new_title100, unsafe_allow_html=True)
 st.write(" #  Let's create more value together, send us an e-mail to info@hybridgreentech.com")
