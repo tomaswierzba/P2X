@@ -214,7 +214,7 @@ source = pd.DataFrame({"Values": [LCoH_electricity_cost2,LCoH_capex2,LCoH_stack_
 domain = ['Electricity','CAPEX','Stack Replacement','O&M Electrolyzer']
 range_ = ['#088da5', 'grey', '#f0f2f6', '#ffe300']
 base = alt.Chart(source).encode(
-    theta=alt.Theta("Values:Q", stack=True), color=alt.Color('Cost contribution:N', scale=alt.Scale(domain=domain, range=range_)),
+    theta=alt.Theta("Values:Q", stack=True), color=alt.Color('Cost contribution:N', scale=alt.Scale(domain=domain, range=range_),fontSize=25,fontWeight=600),
     radius=alt.Radius("Values:Q", scale=alt.Scale(type="sqrt", zero=True, rangeMin=20)),
 )
 
@@ -224,7 +224,7 @@ c2 = base.mark_text(radiusOffset=45).encode(text="labels:N")
 #c2 = base.mark_text(radiusOffset=10, align='left',
  #   baseline='middle').encode(text="Values:Q", color=alt.value('white'))
 
-rp=(c1 + c2).configure_text(fontSize=25,fontWeight=600).configure(fontSize=25,fontWeight=600)
+rp=(c1 + c2).configure_text(fontSize=25,fontWeight=600)
 
 st.altair_chart(rp, use_container_width=True)
 
