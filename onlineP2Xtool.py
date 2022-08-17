@@ -220,7 +220,7 @@ base = alt.Chart(source).encode(
 
 c1 = base.mark_arc(innerRadius=20)
 
-c2 = base.mark_text(radiusOffset=40).encode(text="labels:N")
+c2 = base.mark_text(radiusOffset=45).encode(text="labels:N")
 #c2 = base.mark_text(radiusOffset=10, align='left',
  #   baseline='middle').encode(text="Values:Q", color=alt.value('white'))
 
