@@ -212,7 +212,7 @@ st.metric("Cost-driver","%s (%s %% of cost)" % (a20, per_main_costdriver))
 st.write(" # Levelised cost contributions for Hydrogen")
 source = pd.DataFrame({"Values": [LCoH_electricity_cost2,LCoH_capex2,LCoH_stack_rep_cost2, LCoH_opex_electrolyser2],"Cost contribution": ['Electricity','CAPEX','Stack Replacement','O&M Electrolyzer'],"labels":["%s €/kg" % (LCoH_electricity_cost2),"%s €/kg" % (LCoH_capex2),"%s €/kg" % (LCoH_stack_rep_cost2),"%s €/kg" % (LCoH_opex_electrolyser2)]})
 domain = ['Electricity','CAPEX','Stack Replacement','O&M Electrolyzer']
-range_ = ['#088da5', '#194366', '#f0f2f6', '#ffe300']
+range_ = ['#088da5', 'grey', '#f0f2f6', '#ffe300']
 base = alt.Chart(source).encode(
     theta=alt.Theta("Values:Q", stack=True), color=alt.Color('Cost contribution:N', scale=alt.Scale(domain=domain, range=range_)),
     radius=alt.Radius("Values:Q", scale=alt.Scale(type="sqrt", zero=True, rangeMin=20)),
