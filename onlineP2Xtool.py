@@ -144,7 +144,12 @@ else:
 #st.write('Net present value: %s M€ (%s %% discount rate)' % (npv2,discountRate2))
 #------------------------------------IRR---------------------------------------------------------------------------------------------
 IRR = npf.irr(cf)
-IRR2 = round(IRR*100)
+b = np.where(np.isnan(IRR), -1000, IRR)
+if b==-1000:
+    IRR2="N/A"
+else:
+   IRR2 = "%s %%" % (round(IRR*100))
+
 #st.write('IRR: %s %%' % (IRR2))
 #Hydrogen Price independent
 #------------------------------------LCoH-----------------------------------------------------------------------------------
@@ -198,7 +203,7 @@ per_main_costdriver = round(data[a20] / LCoH * 100 )
 st.write(""" # Results """)
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Payback time", '%s' % (a101))
-col3.metric("IRR", "%s %%" % (IRR2))
+col3.metric("IRR", "%s" % (IRR2))
 col4.metric("LCoH", "%s €/kg" % (LCoH2))
 col2.metric("NPV", "%s M€/MW"  % (npv2))
 st.metric("Cost-driver","%s (%s %% of cost)" % (a20, per_main_costdriver))
