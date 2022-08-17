@@ -224,9 +224,9 @@ c2 = base.mark_text(radiusOffset=25).encode(text="labels:N")
 #c2 = base.mark_text(radiusOffset=10, align='left',
  #   baseline='middle').encode(text="Values:Q", color=alt.value('white'))
 
-(c1 + c2).configure_text(fontSize=25,fontWeight=600)
+rp=(c1 + c2).configure_text(fontSize=25,fontWeight=600)
 
-
+st.altair_chart(rp, use_container_width=True)
 
 brush2 = alt.selection_interval()
 st.write(" # Cash flow plots")
