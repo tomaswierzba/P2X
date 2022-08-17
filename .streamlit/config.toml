@@ -165,7 +165,7 @@
 
 base="light"
 primaryColor="#ffe300"
-backgroundColor="#088da5"
+backgroundColor="#111E2A"
 textColor="#f0f2f6"
 
 # The preset Streamlit theme that your custom theme inherits from. One of "light" or "dark".
