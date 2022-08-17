@@ -201,7 +201,7 @@ per_main_costdriver = round(data[a20] / LCoH * 100 )
 #new_title7 = '<p style="font-size:45px;font-weight:700;color:black;text-align:center;">Results</p>'
 #st.write(new_title7, unsafe_allow_html=True)
 st.write(""" # Results """)
-col1, col3, col4, col2 = st.columns(4)
+col1, col3, col4, col2 = st.columns(5)
 col1.metric("Payback time", '%s' % (a101))
 col3.metric("IRR", "%s" % (IRR2))
 col4.metric("LCoH", "%s €/kg" % (LCoH2))
