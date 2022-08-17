@@ -224,7 +224,7 @@ c2 = base.mark_text(radiusOffset=45).encode(text="labels:N")
 #c2 = base.mark_text(radiusOffset=10, align='left',
  #   baseline='middle').encode(text="Values:Q", color=alt.value('white'))
 
-rp=(c1 + c2).configure_text(fontSize=25,fontWeight=600)
+rp=(c1 + c2).configure_text(fontSize=25,fontWeight=600).configure_legend(titleFontSize=25, titleFontWeight=600,labelFontSize= 25,labelFontWeight=600)
 
 st.altair_chart(rp, use_container_width=True)
 
