@@ -43,7 +43,16 @@ st.write(""" Created in the NEXP2X Project - Funded by Innovation Fund Denmark "
 #Explain assumptions here
 
 electrolyser_nom_cap = 1000 #kW
-st.sidebarwidth(width = 500)
+st.markdown(
+    f'''
+        <style>
+            .sidebar .sidebar-content {{
+                width: 375px;
+            }}
+        </style>
+    ''',
+    unsafe_allow_html=True
+)
 st.sidebar.image(image2)
 
 new_title1 = '<p style="font-size:25px;font-weight:600;color:#f0f2f6">Key variables</p>'
