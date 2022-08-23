@@ -43,16 +43,7 @@ st.write(""" Created in the NEXP2X Project - Funded by Innovation Fund Denmark "
 #Explain assumptions here
 
 electrolyser_nom_cap = 1000 #kW
-st.markdown(
-    f'''
-        <style>
-            .sidebar .sidebar-content {{
-                width: 1000px;
-            }}
-        </style>
-    ''',
-    unsafe_allow_html=True
-)
+
 st.sidebar.image(image2)
 
 new_title1 = '<p style="font-size:25px;font-weight:600;color:#f0f2f6">Key variables</p>'
@@ -102,6 +93,16 @@ lifetime = st.sidebar.slider('Project lifetime in years:', 0, 30,25,1)
 discountRate_100 = st.sidebar.slider('Desired discount rate in %:', 0, 50, 5,1)
 discountRate = discountRate_100/100
 
+st.markdown(
+    f'''
+        <style>
+            .sidebar .sidebar-content {{
+                width: 1000px;
+            }}
+        </style>
+    ''',
+    unsafe_allow_html=True
+)
 #-----------------------------------OPEX---------------------------------------------------------------------------------------
 OPEX_electrolyser_yearly = electrolyser_OPEX_percentage * electrolyser_specific_invest * electrolyser_nom_cap #€/year this value must be changed when changing electrolyser specific investment
 Electricity_cost_yearly  = Electricity_spot * full_load_hours * electrolyser_nom_cap
