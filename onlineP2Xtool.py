@@ -224,7 +224,7 @@ c1 = base.mark_arc(innerRadius=20)
 
 
 rp=(c1).configure_text(fontSize=25,fontWeight=600).configure_legend(titleFontSize=16, titleFontWeight=600,labelFontSize= 16,labelFontWeight=600, gradientLength=800,
-    gradientThickness=30)#. configure(autosize="fit")
+    gradientThickness=60)#. configure(autosize="fit")
 
 st.altair_chart(rp, use_container_width=True)
 
