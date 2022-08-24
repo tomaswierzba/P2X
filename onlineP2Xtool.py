@@ -216,8 +216,8 @@ range_ = ['#088da5', 'grey', '#f0f2f6', '#ffe300']
 base = alt.Chart(source).encode(
     theta=alt.Theta("Values:Q", stack=True), color=alt.Color('Cost contribution:N', scale=alt.Scale(domain=domain, range=range_)),
     radius=alt.Radius("Values:Q", scale=alt.Scale(type="sqrt", zero=True, rangeMin=20)),
-).properties( width=900,
-    height=540)
+).properties( width=300,
+    height=140)
 
 c1 = base.mark_arc(innerRadius=20)
 
