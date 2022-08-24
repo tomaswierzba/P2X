@@ -210,7 +210,7 @@ st.metric("Cost-driver","%s (%s %% of cost)" % (a20, per_main_costdriver))
 #st.write("The main cost-driver for the Levelized Cost of Hydrogen is found to be %s, accounting for %s %% of the cost." % (a20, per_main_costdriver))
 
 st.write(" # Levelised cost contributions for Hydrogen")
-source = pd.DataFrame({"Values": [LCoH_electricity_cost2,LCoH_capex2,LCoH_stack_rep_cost2, LCoH_opex_electrolyser2],"Cost contribution": ['Electricity: %s €/kg' % (LCoH_electricity_cost2),'CAPEX','Stack Replacement','O&M Electrolyzer'],"labels":["%s €/kg" % (LCoH_electricity_cost2),"%s €/kg" % (LCoH_capex2),"%s €/kg" % (LCoH_stack_rep_cost2),"%s €/kg" % (LCoH_opex_electrolyser2)]})
+source = pd.DataFrame({"Values": [LCoH_electricity_cost2,LCoH_capex2,LCoH_stack_rep_cost2, LCoH_opex_electrolyser2],"Cost contribution": ['Electricity: %s €/kg' % (LCoH_electricity_cost2),'CAPEX: %s €/kg' % (LCoH_capex2),'Stack Replacement: %s €/kg' % (LCoH_stack_rep_cost2),'O&M Electrolyzer: %s €/kg' % (LCoH_opex_electrolyser2)],"labels":["%s €/kg" % (LCoH_electricity_cost2),"%s €/kg" % (LCoH_capex2),"%s €/kg" % (LCoH_stack_rep_cost2),"%s €/kg" % (LCoH_opex_electrolyser2)]})
 domain = ['Electricity: %s €/kg' % (LCoH_electricity_cost2),'CAPEX','Stack Replacement','O&M Electrolyzer']
 range_ = ['#088da5', 'grey', '#f0f2f6', '#ffe300']
 base = alt.Chart(source).encode(
@@ -220,11 +220,10 @@ base = alt.Chart(source).encode(
 
 c1 = base.mark_arc(innerRadius=20)
 
-c2 = base.mark_text(radiusOffset=45).encode(text="labels:N")
-#c2 = base.mark_text(radiusOffset=10, align='left',
- #   baseline='middle').encode(text="Values:Q", color=alt.value('white'))
+#c2 = base.mark_text(radiusOffset=45).encode(text="labels:N")
 
-rp=(c1 + c2).configure_text(fontSize=25,fontWeight=600).configure_legend(titleFontSize=18, titleFontWeight=600,labelFontSize= 18,labelFontWeight=600)
+
+rp=(c1).configure_text(fontSize=25,fontWeight=600).configure_legend(titleFontSize=25, titleFontWeight=600,labelFontSize= 25,labelFontWeight=600)
 
 st.altair_chart(rp, use_container_width=True)
 
