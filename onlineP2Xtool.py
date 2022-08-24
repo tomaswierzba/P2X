@@ -223,7 +223,7 @@ c1 = base.mark_arc(innerRadius=20)
 #c2 = base.mark_text(radiusOffset=45).encode(text="labels:N")
 
 
-rp=(c1).configure_text(fontSize=25,fontWeight=600).configure_legend(titleFontSize=20, titleFontWeight=600,labelFontSize= 18,labelFontWeight=600,labelLimit= 0)#.configure(autosize="fit")
+rp=(c1).configure_text(fontSize=25,fontWeight=600).configure_legend(titleFontSize=22, titleFontWeight=600,labelFontSize= 20,labelFontWeight=600,labelLimit= 0)#.configure(autosize="fit")
 
 st.altair_chart(rp, use_container_width=True)
 
