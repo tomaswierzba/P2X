@@ -214,7 +214,7 @@ source = pd.DataFrame({"Values": [LCoH_electricity_cost2,LCoH_capex2,LCoH_stack_
 domain = ['Electricity: %s €/kg' % (LCoH_electricity_cost2),'CAPEX: %s €/kg' % (LCoH_capex2),'Stack Replacement: %s €/kg' % (LCoH_stack_rep_cost2),'O&M Electrolyzer: %s €/kg' % (LCoH_opex_electrolyser2)]
 range_ = ['#088da5', 'grey', '#f0f2f6', '#ffe300']
 base = alt.Chart(source).encode(
-    theta=alt.Theta("Values:Q", stack=True), color=alt.Color('Cost contribution:N', scale=alt.Scale(domain=domain, range=range_),legend=alt.Legend(clipHeight=50, clipWidth=200)),
+    theta=alt.Theta("Values:Q", stack=True), color=alt.Color('Cost contribution:N', scale=alt.Scale(domain=domain, range=range_),legend=alt.Legend(clipHeight=50)),
     radius=alt.Radius("Values:Q", scale=alt.Scale(type="sqrt", zero=True, rangeMin=20)),
 )
 
@@ -223,7 +223,7 @@ c1 = base.mark_arc(innerRadius=20)
 #c2 = base.mark_text(radiusOffset=45).encode(text="labels:N")
 
 
-rp=(c1).configure_text(fontSize=25,fontWeight=600).configure_legend(titleFontSize=20, titleFontWeight=600,labelFontSize= 16,labelFontWeight=600)#.configure(autosize="fit")
+rp=(c1).configure_text(fontSize=25,fontWeight=600).configure_legend(titleFontSize=20, titleFontWeight=600,labelFontSize= 18,labelFontWeight=600,labelLimit= 0)#.configure(autosize="fit")
 
 st.altair_chart(rp, use_container_width=True)
 
