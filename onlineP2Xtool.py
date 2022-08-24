@@ -216,15 +216,15 @@ range_ = ['#088da5', 'grey', '#f0f2f6', '#ffe300']
 base = alt.Chart(source).encode(
     theta=alt.Theta("Values:Q", stack=True), color=alt.Color('Cost contribution:N', scale=alt.Scale(domain=domain, range=range_)),
     radius=alt.Radius("Values:Q", scale=alt.Scale(type="sqrt", zero=True, rangeMin=20)),
-)
+).properties( width=900,
+    height=540)
 
 c1 = base.mark_arc(innerRadius=20)
 
 #c2 = base.mark_text(radiusOffset=45).encode(text="labels:N")
 
 
-rp=(c1).configure_text(fontSize=25,fontWeight=600).configure_legend(titleFontSize=16, titleFontWeight=600,labelFontSize= 16,labelFontWeight=600, gradientLength=800,
-    gradientThickness=60)#. configure(autosize="fit")
+rp=(c1).configure_text(fontSize=25,fontWeight=600).configure_legend(titleFontSize=16, titleFontWeight=600,labelFontSize= 16,labelFontWeight=600)#. configure(autosize="fit")
 
 st.altair_chart(rp, use_container_width=True)
 
