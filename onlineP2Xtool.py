@@ -22,8 +22,8 @@ import altair as alt
 #IRR
 
 
-from IPython.display import Image
-import base64, io, IPython
+#from IPython.display import Image
+#import base64, io, IPython
 from PIL import Image 
 image = Image.open('HG_logo_white text and box_hori.png')
 image2 = Image.open('HG_Yellow_hori.png')
